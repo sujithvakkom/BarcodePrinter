@@ -5,6 +5,8 @@ using System.Drawing.Printing;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Data;
+using BarcodePrinter;
+using Com.SharpZebra.Printing;
 
 namespace BarCodePrinter
 {
@@ -18,19 +20,38 @@ namespace BarCodePrinter
         {
             this.printerName = printerName;
             DataRow item = itemList.Rows[0];
+            int i = 0;
+            int count = 0;
+
+            BarcodeLabel label;
+            var printer = new ZebraPrinter(printerName);
             do
             {
-                item = itemList.Rows[0];
-                Int32.TryParse(item[5].ToString(), out temp);
-                ((Barcode)item[7]).NumberOfPrint = temp;
-                tempStr = (item[0]).ToString();
-                Boolean.TryParse(tempStr , out f);
-                tempStr = (item[2]).ToString();
-                Boolean.TryParse(tempStr, out f);
-                this.Add((Barcode)item[7]);
+                label = null;
+                count = Int32.Parse(item[5].ToString());
+                     label = new BarcodeLabel()
+                    {
+                        Barcode = item[4].ToString(),
+                        Description = item[3].ToString(),
+                        Currency = item[8].ToString(),
+                        PriceWithTax = Decimal.Parse(item[9].ToString())
+                    };
+                for (i = 0; i < count; i++)
+                {
+                    if (label != null)
+                        printer.Print(label.ELN);
+                }
                 itemList.Rows.Remove(item);
+                item = itemList.Rows[0];
+                //Int32.TryParse(item[5].ToString(), out temp);
+                //((Barcode)item[7]).NumberOfPrint = temp;
+                //tempStr = (item[0]).ToString();
+                //Boolean.TryParse(tempStr , out f);
+                //tempStr = (item[2]).ToString();
+                //Boolean.TryParse(tempStr, out f);
+                //this.Add((Barcode)item[7]);
             } while (itemList.Rows.Count>0);
-            this.print();
+            //this.print();
         }
 
         public void print()
@@ -61,7 +82,7 @@ namespace BarCodePrinter
                 0,
                 0, 
                 Convert.ToInt32(e.PageSettings.PrintableArea.Width),
-                Convert.ToInt32(e.PageSettings.PrintableArea.Height));
+                Convert.ToInt32(e.PageSettings.PrintableArea.Height*0.9));
             e.PageSettings.Margins = new Margins(0, 0, 0, 0);
             /*
             int leftMargin = e.MarginBounds.Left;

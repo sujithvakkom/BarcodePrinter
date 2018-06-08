@@ -49,6 +49,8 @@ namespace BarCodePrinter
             this.itemListForPrint.Columns.Add("#print", typeof(int));
             this.itemListForPrint.Columns.Add("barcode_picture", typeof(Image));
             this.itemListForPrint.Columns.Add("header", typeof(Barcode));
+            this.itemListForPrint.Columns.Add("currency", typeof(string));
+            this.itemListForPrint.Columns.Add("price", typeof(decimal));
             this.itemListForPrint.ColumnChanged += new DataColumnChangeEventHandler(itemListForPrint_ColumnChanged);
             this.itemListForPrint.RowChanged += new DataRowChangeEventHandler(itemListForPrint_RowChanged);
             this.itemListForPrint.RowDeleted += new DataRowChangeEventHandler(itemListForPrint_RowDeleted);
@@ -279,7 +281,11 @@ namespace BarCodePrinter
             {
                 list.Add(new Description(discriptionInstence.Rows[i][0].ToString(),
                     discriptionInstence.Rows[i][1].ToString(),
-                    discriptionInstence.Rows[i][2].ToString()));
+                    discriptionInstence.Rows[i][2].ToString())
+                {
+                    Currency = discriptionInstence.Rows[i][3].ToString(),
+                    Price = Decimal.Parse(discriptionInstence.Rows[i][4].ToString())
+                });
             }
             this.discriptionListBox.DataSource = null;
             this.discriptionListBox.DataSource = list;
@@ -417,7 +423,7 @@ namespace BarCodePrinter
                 item.Barcode,
                 item.numberOfPrint,
                 (Image)x,
-                x);
+                x,item.Currency,item.Price);
             this.selectedDataGridView.Refresh();
             this.customeDiscriprionTextBox.Text = "";
             item.clear();
@@ -513,7 +519,8 @@ namespace BarCodePrinter
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, ex.Message, "Operation failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex.Message != @"There is no row at position 0.")
+                    MessageBox.Show(this, ex.Message, "Operation failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Cursor = System.Windows.Forms.Cursors.Default;
         }

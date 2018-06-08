@@ -131,13 +131,20 @@ namespace BarcodePrinter
             builder.Password = BarcodePrinter.Properties.Settings.Default.Password;
             builder.InitialCatalog = BarcodePrinter.Properties.Settings.Default.Database;
             string cons = builder.ToString();
-            string cmd = @"select TOP (10) ITM.ITEMID AS ITEM_CODE
-	,ITM.ITEMNAME AS ITEM_NAME
-	,BAR.ITEMBARCODE AS CROSS_REFERENCE
+            string cmd = @"SELECT TOP (10) ITM.ITEMID AS ITEM_CODE,
+                ITM.ITEMNAME AS ITEM_NAME,
+                BAR.ITEMBARCODE AS CROSS_REFERENCE,
+			 'AED' as CURRENCY,
+                ISNULL(DISC.AMOUNTINCLTAX, ITM.SALESPRICEINCLTAX) AS SALESPRICEINCLTAX
 FROM RETAILITEM ITM
-INNER JOIN INVENTITEMBARCODE BAR ON ITM.ITEMID = BAR.ITEMID
-where ITM.ITEMID LIKE @ITEMID
-OR BAR.ITEMBARCODE LIKE @ITEMBARCODE
+     INNER JOIN INVENTITEMBARCODE BAR ON ITM.ITEMID = BAR.ITEMID
+     LEFT JOIN PRICEDISCTABLE DISC ON ITM.ITEMID = DISC.ITEMRELATION
+                                      AND bar.UNITID = DISC.UNITID
+WHERE isnull(DISC.ACCOUNTCODE, 2) = 2
+      AND isnull(DISC.RELATION, 4) = 4
+      AND ITM.DELETED = 0
+      AND (ITM.ITEMID LIKE @ITEMID
+           OR BAR.ITEMBARCODE LIKE @ITEMBARCODE)
 ORDER BY ITEM_CODE";
             using (SqlConnection connection = new SqlConnection(cons))
             using (SqlCommand command = new SqlCommand(cmd, connection))

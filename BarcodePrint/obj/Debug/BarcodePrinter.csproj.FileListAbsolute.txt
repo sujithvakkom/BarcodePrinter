@@ -1,3 +1,18 @@
 E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.exe.config
 E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.exe
 E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.pdb
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.exe.config
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.exe
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.pdb
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\bin\Debug\Resources\HelpBarcodePrint.chm
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.exe
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.pdb
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\bin\Debug\BarcodeCreator.dll
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.csprojResolveAssemblyReference.cache
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.Authenticate.resources
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\BarCodePrinter.barcodePrinterForm.resources
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.FormSettings.resources
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.Properties.Resources.resources
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.csproj.GenerateResource.Cache
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\bin\Debug\BarcodeLib.dll
+C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\bin\Debug\Com.SharpZebra.dll

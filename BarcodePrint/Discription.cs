@@ -195,6 +195,8 @@ namespace BarCodePrinter
             this.addToPrintList = discription.AddToPrintList;
             this.numberOfPrint = discription.numberOfPrint;
             this.searchCode = discription.barcode;
+            this.currency = discription.Currency;
+            this.price = discription.Price;
         }
 
         internal void insert()

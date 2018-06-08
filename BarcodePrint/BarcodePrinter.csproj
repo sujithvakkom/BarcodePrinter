@@ -70,6 +70,12 @@
     <Reference Include="BarcodeCreator">
       <HintPath>.\BarcodeCreator.dll</HintPath>
     </Reference>
+    <Reference Include="BarcodeLib">
+      <HintPath>lib\net45\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Com.SharpZebra">
+      <HintPath>lib\net45\Com.SharpZebra.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.OracleClient" />
@@ -87,6 +93,7 @@
     </Compile>
     <Compile Include="Barcode.cs">
     </Compile>
+    <Compile Include="BarcodeLabel.cs" />
     <Compile Include="FormSettings.cs">
       <SubType>Form</SubType>
     </Compile>
