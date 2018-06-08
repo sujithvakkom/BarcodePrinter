@@ -1,0 +1,16 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=HelpBarcodePrint.chm
+Contents file=barcodeprinter.hhc
+Default topic=InterfaceIntro.htm
+Display compile progress=No
+Index file=Index.hhk
+Language=0x409 English (United States)
+Title=Barcode Printer Help
+
+
+[FILES]
+InterfaceIntro.htm
+
+[INFOTYPES]
+

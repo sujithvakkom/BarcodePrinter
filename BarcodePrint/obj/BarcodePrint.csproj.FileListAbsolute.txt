@@ -1,0 +1,4 @@
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\BarCodePtinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\BarcodePrint.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\BarcodePrint.csproj.GenerateResource.Cache

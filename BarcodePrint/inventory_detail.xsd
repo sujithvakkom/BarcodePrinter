@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="inventory_detail" targetNamespace="http://tempuri.org/inventory_detail.xsd" xmlns:mstns="http://tempuri.org/inventory_detail.xsd" xmlns="http://tempuri.org/inventory_detail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="inventory_detail" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="inventory_detail" msprop:Generator_DataSetName="inventory_detail">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="inventory_detail" msprop:Generator_UserTableName="inventory_detail" msprop:Generator_RowDeletedName="inventory_detailRowDeleted" msprop:Generator_RowChangedName="inventory_detailRowChanged" msprop:Generator_RowClassName="inventory_detailRow" msprop:Generator_RowChangingName="inventory_detailRowChanging" msprop:Generator_RowEvArgName="inventory_detailRowChangeEvent" msprop:Generator_RowEvHandlerName="inventory_detailRowChangeEventHandler" msprop:Generator_TableClassName="inventory_detailDataTable" msprop:Generator_TableVarName="tableinventory_detail" msprop:Generator_RowDeletingName="inventory_detailRowDeleting" msprop:Generator_TablePropName="_inventory_detail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Item" msprop:Generator_UserColumnName="Item" msprop:Generator_ColumnPropNameInRow="Item" msprop:Generator_ColumnVarNameInTable="columnItem" msprop:Generator_ColumnPropNameInTable="ItemColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Discribtion" msprop:Generator_UserColumnName="Discribtion" msprop:Generator_ColumnPropNameInRow="Discribtion" msprop:Generator_ColumnVarNameInTable="columnDiscribtion" msprop:Generator_ColumnPropNameInTable="DiscribtionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Prints" msprop:Generator_UserColumnName="Prints" msprop:Generator_ColumnVarNameInTable="columnPrints" msprop:Generator_ColumnPropNameInRow="Prints" msprop:Generator_ColumnPropNameInTable="PrintsColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

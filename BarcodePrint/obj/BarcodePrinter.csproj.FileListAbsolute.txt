@@ -1,0 +1,147 @@
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\BarCodePtinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\Debug\AxInterop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\Debug\Interop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\Debug\Inventory.mdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\Debug\BarcodePrinter.exe.config
+I:\BarcodePrint\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe.config
+I:\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.exe
+I:\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.pdb
+D:\works\BarcodePrint\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe.config
+D:\works\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.exe
+D:\works\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.pdb
+D:\works\BarcodePrint\BarcodePrint\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\works\BarcodePrint\BarcodePrint\obj\x86\Debug\BarCodePrinter.barcodePrinterForm.resources
+D:\works\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.BarcodeTemplate.resources
+D:\works\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.Properties.Resources.resources
+D:\works\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.csproj.GenerateResource.Cache
+D:\works\BarcodePrint\BarcodePrint\bin\x86\Debug\Inventory.mdb
+D:\works\BarcodePrint\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe
+D:\works\BarcodePrint\BarcodePrint\bin\x86\Debug\BarcodePrinter.pdb
+D:\works\BarcodePrint\BarcodePrint\bin\x86\Debug\AxInterop.IDAutomation.dll
+D:\works\BarcodePrint\BarcodePrint\bin\x86\Debug\Interop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\x86\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\x86\Debug\AxInterop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\bin\x86\Debug\Interop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\x86\Debug\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint\BarcodePrint\obj\x86\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Debug\AxInterop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Debug\Interop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Debug\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Debug\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Debug\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Release\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Release\AxInterop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\bin\x86\Release\Interop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Release\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Release\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Release\Interop.IDAutomation.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.csproj.ResolveComReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\x86\Release\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\x86\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\x86\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\x86\Release\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\x86\Release\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\x86\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\x86\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\x86\Release\Connections\service.txt
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\x86\Release\BarcodePrinter.Connections.service.txt
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\Debug\Connections\service.txt
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\Debug\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\Debug\Oracle.DataAccess.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Debug\BarcodePrinter.Connections.service.txt
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Debug\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Debug\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Debug\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\Release\Connections\service.txt
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\bin\Release\Oracle.DataAccess.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Release\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Release\BarcodePrinter.Connections.service.txt
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Release\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Release\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Release\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrint - Copy - Copy\BarcodePrint\obj\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Release\Connections\service.txt
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Release\Oracle.DataAccess.dll
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Release\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Release\BarcodePrinter.Connections.service.txt
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Release\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Release\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Release\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Debug\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Release\Resources\HelpBarcodePrint.chm
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Debug\Resources\HelpBarcodePrint.chm
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\x86\Release\Resources\HelpBarcodePrint.chm
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\x86\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\x86\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Release\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Release\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Release\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Release\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Release\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Release\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Release\BarcodePrinter.FormSettings.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\x86\Release\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\x86\Debug\Resources\HelpBarcodePrint.chm
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\x86\Debug\service
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\x86\Debug\BarcodePrinter.exe
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\x86\Debug\BarcodePrinter.pdb
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Debug\BarCodePrinter.barcodePrinterForm.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Debug\BarcodePrinter.FormSettings.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Debug\BarcodePrinter.Properties.Resources.resources
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\x86\Debug\BarcodePrinter.csproj.GenerateResource.Cache
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Release\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.exe.config
+E:\Work\Visual Studio 2005\Projects\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.FormSettings.resources
