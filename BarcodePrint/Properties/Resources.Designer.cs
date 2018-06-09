@@ -61,6 +61,33 @@ namespace BarcodePrinter.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto EAN13 / Code 128.
+        /// </summary>
+        internal static string AutoEAN13Code128 {
+            get {
+                return ResourceManager.GetString("AutoEAN13Code128", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code 128.
+        /// </summary>
+        internal static string Code128 {
+            get {
+                return ResourceManager.GetString("Code128", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EAN 13.
+        /// </summary>
+        internal static string EAN13 {
+            get {
+                return ResourceManager.GetString("EAN13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] HelpBarcodePrint {

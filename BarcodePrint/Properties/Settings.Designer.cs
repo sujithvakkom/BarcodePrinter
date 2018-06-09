@@ -12,7 +12,7 @@ namespace BarcodePrinter.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -56,28 +56,6 @@ namespace BarcodePrinter.Properties {
             }
             set {
                 this["FontSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\item_master.mdb; Per" +
-            "sist Security Info=False;")]
-        public string InventoryConnectionString {
-            get {
-                return ((string)(this["InventoryConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\item_master.mdf;Integra" +
-            "ted Security=True;User Instance=True")]
-        public string item_masterConnectionString {
-            get {
-                return ((string)(this["item_masterConnectionString"]));
             }
         }
         
@@ -138,6 +116,68 @@ namespace BarcodePrinter.Properties {
             }
             set {
                 this["PrintOnCommit"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\item_master.mdb; Per" +
+            "sist Security Info=False;")]
+        public string InventoryConnectionString {
+            get {
+                return ((string)(this["InventoryConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\item_master.mdf;Integra" +
+            "ted Security=True;User Instance=True")]
+        public string item_masterConnectionString {
+            get {
+                return ((string)(this["item_masterConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\nN\r\nOD\r\nq344\r\nQ192,24\r\nD15\r\nS1\r\nA30,20,0,2,1,1,N,\\\"{0}\\\"\r\nB50,50,0,E30,2,5,80,B," +
+            "\\\"{1}\\\"\r\nA30,150,0,4,1,1,N,\\\"{2}.\\\"\r\nA90,150,0,4,1,1,N,\\\"{3}\\\"\r\nA140,175,0,1,1,1" +
+            ",N,\\nP{4}\r\n")]
+        public string ELNFormatEAN13 {
+            get {
+                return ((string)(this["ELNFormatEAN13"]));
+            }
+            set {
+                this["ELNFormatEAN13"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\nN\r\nOD\r\nq344\r\nQ192,24\r\nD15\r\nS1\r\nA30,20,0,2,1,1,N,\\\"{0}\\\"\r\nB50,50,0,1,2,2,70,B,\\\"" +
+            "{1}\\\"\r\nA30,150,0,4,1,1,N,\\\"{2}.\\\"\r\nA90,150,0,4,1,1,N,\\\"{3}\\\"\r\nA140,175,0,1,1,1,N" +
+            ",\r\nP{4}\r\n")]
+        public string ELNFormatCode128 {
+            get {
+                return ((string)(this["ELNFormatCode128"]));
+            }
+            set {
+                this["ELNFormatCode128"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Auto")]
+        public string BarcodeMode {
+            get {
+                return ((string)(this["BarcodeMode"]));
+            }
+            set {
+                this["BarcodeMode"] = value;
             }
         }
     }

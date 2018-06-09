@@ -22,6 +22,7 @@ namespace BarcodePrinter
             String _Database;
             String _UserName;
             String _Password;
+            String _Margin;
             int _FontSize;
             bool _PrintOnCommit;
             public String Connection { get { return _Connection; } set { _Connection = value; } }
@@ -30,6 +31,7 @@ namespace BarcodePrinter
             public String UserName { get { return _UserName; } set { _UserName = value; } }
             public String Password { get { return _Password; } set { _Password = value; } }
             public String Printer { get { return _Printer; } set { _Printer = value; } }
+            public String Margin { get { return _Margin; } set { _Margin = value; } }
             public int FontSize { get { return _FontSize; } set { _FontSize = value; } }
             public bool PrintOnCommit { get { return _PrintOnCommit; } set { _PrintOnCommit = value; } }
             public Settings(Boolean x)
@@ -42,12 +44,40 @@ namespace BarcodePrinter
                 _UserName = Properties.Settings.Default.UserName;
                 _Password = Properties.Settings.Default.Password;
                 _PrintOnCommit = Properties.Settings.Default.PrintOnCommit;
+                _Margin = "";
             }
         }
         public FormSettings()
         {
             InitializeComponent();
             setting = new Settings(true);
+            this.textBoxEAN13Sample.Text = @"
+N
+OD
+q344
+Q192,24
+D15
+S1
+A30,20,0,2,1,1,N,\""{ 0}\""
+B50,50,0,E30,2,5,80,B,\""{1}\""
+A30,150,0,4,1,1,N,\""{2}.\""
+A90,150,0,4,1,1,N,\""{3}\""
+A140,175,0,1,1,1,N,\nP{ 4}
+";
+            this.textBoxCode128Sample.Text= @"
+N
+OD
+q344
+Q192,24
+D15
+S1
+A30,20,0,2,1,1,N,\""{0}\""
+B50,50,0,1,2,2,70,B,\""{1}\""
+A30,150,0,4,1,1,N,\""{2}.\""
+A90,150,0,4,1,1,N,\""{3}\""
+A140,175,0,1,1,1,N,
+P{ 4}
+";
         }
 
         private void FormSettings_Load(object sender, EventArgs e)
@@ -73,6 +103,17 @@ namespace BarcodePrinter
             textBoxUserName.Text = Properties.Settings.Default.UserName.ToString();
             textBoxPassword.Text = Properties.Settings.Default.Password.ToString();
             this.checkBoxPrintOnCommit.Checked = Properties.Settings.Default.PrintOnCommit;
+            this.textBoxEAN13ELN.Text = Properties.Settings.Default.ELNFormatEAN13.ToString();
+            this.textBoxCode128ELN.Text = Properties.Settings.Default.ELNFormatCode128.ToString();
+            this.Size = new Size(827,471);
+            this.radioButtonAuto.Text = Properties.Resources.AutoEAN13Code128;
+            this.radioButtonEAN13.Text = Properties.Resources.EAN13;
+            this.radioButtonCode128.Text = Properties.Resources.Code128;
+            foreach (var x in this.groupBoxBarcodeMode.Controls)
+            {
+                if (x.GetType() == typeof(RadioButton))
+                    ((RadioButton)x).Checked = Properties.Settings.Default.BarcodeMode == ((Control)x).Text;
+            }
         }
 
         private void buttonApply_Click(object sender, EventArgs e)
@@ -142,6 +183,38 @@ namespace BarcodePrinter
                         this.checkBoxPrintOnCommit.Checked;
                 }
                 catch (Exception) { }
+                try
+                {
+                    Properties.Settings.Default.ELNFormatEAN13 = this.textBoxEAN13ELN.Text;
+                }
+                catch (Exception)
+                {
+
+                }
+                try
+                {
+                    Properties.Settings.Default.ELNFormatCode128 = this.textBoxCode128ELN.Text;
+                }
+                catch (Exception)
+                {
+
+                }
+                try
+                {
+
+                    //this.radioButtonAuto.Text = Properties.Resources.AutoEAN13Code128;
+                    //this.radioButtonEAN13.Text = Properties.Resources.EAN13;
+                    //this.radioButtonCode128.Text = Properties.Resources.Code128;
+                    Properties.Settings.Default.BarcodeMode =
+                        this.radioButtonAuto.Checked ? Properties.Resources.AutoEAN13Code128 :
+                        this.radioButtonEAN13.Checked ? Properties.Resources.EAN13 :
+                        this.radioButtonCode128.Checked ? Properties.Resources.EAN13 : 
+                        Properties.Resources.AutoEAN13Code128;
+                }
+                catch (Exception)
+                {
+
+                }
                 Properties.Settings.Default.Save();
                 this.buttonApply.Enabled = false;
                 MessageBox.Show(this, "The Settings are applied.","Success");
@@ -217,6 +290,11 @@ namespace BarcodePrinter
                 MessageBox.Show(this, ex.InnerException.Message, ex.Message);
                 this.buttonApply.Enabled = false;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
