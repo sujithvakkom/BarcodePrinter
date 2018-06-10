@@ -16,3 +16,17 @@ C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\Barcode
 C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.csproj.GenerateResource.Cache
 C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\bin\Debug\BarcodeLib.dll
 C:\Users\sujithvakkom\Source\Repos\BarcodePrinter\BarcodePrint\bin\Debug\Com.SharpZebra.dll
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\bin\Debug\Resources\HelpBarcodePrint.chm
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.exe.config
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.exe
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\bin\Debug\BarcodePrinter.pdb
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\bin\Debug\BarcodeCreator.dll
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\bin\Debug\BarcodeLib.dll
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\bin\Debug\Com.SharpZebra.dll
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.Authenticate.resources
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarCodePrinter.barcodePrinterForm.resources
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.FormSettings.resources
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.Properties.Resources.resources
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.csproj.GenerateResource.Cache
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.exe
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.pdb

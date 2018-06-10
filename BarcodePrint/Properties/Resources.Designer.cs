@@ -96,5 +96,59 @@ namespace BarcodePrinter.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///N
+        ///OD
+        ///q344
+        ///Q192,24
+        ///D15
+        ///S1
+        ///A50,20,0,2,1,1,N,&quot;{0}&quot;
+        ///B50,50,0,1,2,2,70,B,&quot;{1}&quot;
+        ///A100,150,0,4,1,1,N,&quot;{2} &quot;
+        ///A160,150,0,4,1,1,N,&quot;{3}&quot;
+        ///A140,175,0,1,1,1,N,
+        ///P{4}
+        ///.
+        /// </summary>
+        internal static string SampleCode128ELN {
+            get {
+                return ResourceManager.GetString("SampleCode128ELN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///N
+        ///OD
+        ///q344
+        ///Q192,24
+        ///D15
+        ///S1
+        ///A50,20,0,2,1,1,N,&quot;{0}&quot;
+        ///B50,50,0,E30,2,5,80,B,&quot;{1}&quot;
+        ///A100,150,0,4,1,1,N,&quot;{2} &quot;
+        ///A160,150,0,4,1,1,N,&quot;{3}&quot;
+        ///A140,175,0,1,1,1,N,
+        ///P{4}
+        ///.
+        /// </summary>
+        internal static string SampleEAN13ELN {
+            get {
+                return ResourceManager.GetString("SampleEAN13ELN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings_icon {
+            get {
+                object obj = ResourceManager.GetObject("settings_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

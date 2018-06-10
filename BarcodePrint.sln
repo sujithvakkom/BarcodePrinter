@@ -1,7 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodePrinter", "BarcodePrint\BarcodePrinter.csproj", "{F95CBACF-37D1-4728-B388-B99B7F9D4EDC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupBarcodePrinter", "SetupBarcodePrinter\SetupBarcodePrinter.vdproj", "{7B12674F-50EA-48AA-808D-1E82BEDA6EFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +23,10 @@ Global
 		{F95CBACF-37D1-4728-B388-B99B7F9D4EDC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F95CBACF-37D1-4728-B388-B99B7F9D4EDC}.Release|x86.ActiveCfg = Release|x86
 		{F95CBACF-37D1-4728-B388-B99B7F9D4EDC}.Release|x86.Build.0 = Release|x86
+		{7B12674F-50EA-48AA-808D-1E82BEDA6EFD}.Debug|Any CPU.ActiveCfg = Debug
+		{7B12674F-50EA-48AA-808D-1E82BEDA6EFD}.Debug|x86.ActiveCfg = Debug
+		{7B12674F-50EA-48AA-808D-1E82BEDA6EFD}.Release|Any CPU.ActiveCfg = Release
+		{7B12674F-50EA-48AA-808D-1E82BEDA6EFD}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

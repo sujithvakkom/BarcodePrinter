@@ -50,11 +50,12 @@ q344
 Q192,24
 D15
 S1
-A30,20,0,2,1,1,N,\"{0}\"
-B50,50,0,E30,2,5,80,B,\"{1}\"
-A30,150,0,4,1,1,N,\"{2}.\"
-A90,150,0,4,1,1,N,\"{3}\"
-A140,175,0,1,1,1,N,\nP{4}
+A30,20,0,2,1,1,N,"{0}"
+B50,50,0,E30,2,5,80,B,"{1}"
+A100,150,0,4,1,1,N,"{2} "
+A160,150,0,4,1,1,N,"{3}"
+A140,175,0,1,1,1,N,
+P{4}
 </Value>
     </Setting>
     <Setting Name="ELNFormatCode128" Type="System.String" Scope="User">
@@ -65,16 +66,16 @@ q344
 Q192,24
 D15
 S1
-A30,20,0,2,1,1,N,\"{0}\"
-B50,50,0,1,2,2,70,B,\"{1}\"
-A30,150,0,4,1,1,N,\"{2}.\"
-A90,150,0,4,1,1,N,\"{3}\"
+A30,20,0,2,1,1,N,"{0}"
+B50,50,0,1,2,2,70,B,"{1}"
+A100,150,0,4,1,1,N,"{2} "
+A160,150,0,4,1,1,N,"{3}"
 A140,175,0,1,1,1,N,
 P{4}
 </Value>
     </Setting>
     <Setting Name="BarcodeMode" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Auto</Value>
+      <Value Profile="(Default)">Auto EAN13 / Code 128</Value>
     </Setting>
   </Settings>
 </SettingsFile>

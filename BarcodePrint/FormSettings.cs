@@ -25,6 +25,10 @@ namespace BarcodePrinter
             String _Margin;
             int _FontSize;
             bool _PrintOnCommit;
+            private string _EAN13ELN;
+            private string _Code128ELN;
+            private string _BarcodeMode;
+
             public String Connection { get { return _Connection; } set { _Connection = value; } }
             public String DataSource { get { return _DataSource; } set { _DataSource = value; } }
             public String Database { get { return _Database; } set { _Database = value; } }
@@ -32,6 +36,9 @@ namespace BarcodePrinter
             public String Password { get { return _Password; } set { _Password = value; } }
             public String Printer { get { return _Printer; } set { _Printer = value; } }
             public String Margin { get { return _Margin; } set { _Margin = value; } }
+            public String EAN13ELN { get { return _EAN13ELN; } set { _EAN13ELN = value; } }
+            public String Code128ELN { get { return _Code128ELN; } set { _Code128ELN = value; } }
+            public String BarcodeMode { get { return _BarcodeMode; } set { _BarcodeMode = value; } }
             public int FontSize { get { return _FontSize; } set { _FontSize = value; } }
             public bool PrintOnCommit { get { return _PrintOnCommit; } set { _PrintOnCommit = value; } }
             public Settings(Boolean x)
@@ -45,39 +52,17 @@ namespace BarcodePrinter
                 _Password = Properties.Settings.Default.Password;
                 _PrintOnCommit = Properties.Settings.Default.PrintOnCommit;
                 _Margin = "";
+                _EAN13ELN = Properties.Settings.Default.ELNFormatEAN13;
+                _Code128ELN = Properties.Settings.Default.ELNFormatCode128;
+                _BarcodeMode = Properties.Settings.Default.BarcodeMode;
             }
         }
         public FormSettings()
         {
             InitializeComponent();
             setting = new Settings(true);
-            this.textBoxEAN13Sample.Text = @"
-N
-OD
-q344
-Q192,24
-D15
-S1
-A30,20,0,2,1,1,N,\""{ 0}\""
-B50,50,0,E30,2,5,80,B,\""{1}\""
-A30,150,0,4,1,1,N,\""{2}.\""
-A90,150,0,4,1,1,N,\""{3}\""
-A140,175,0,1,1,1,N,\nP{ 4}
-";
-            this.textBoxCode128Sample.Text= @"
-N
-OD
-q344
-Q192,24
-D15
-S1
-A30,20,0,2,1,1,N,\""{0}\""
-B50,50,0,1,2,2,70,B,\""{1}\""
-A30,150,0,4,1,1,N,\""{2}.\""
-A90,150,0,4,1,1,N,\""{3}\""
-A140,175,0,1,1,1,N,
-P{ 4}
-";
+            this.textBoxEAN13Sample.Text = Properties.Resources.SampleCode128ELN;
+            this.textBoxCode128Sample.Text= Properties.Resources.SampleCode128ELN;
         }
 
         private void FormSettings_Load(object sender, EventArgs e)
@@ -247,6 +232,11 @@ P{ 4}
 
         private void comboBoxConnections_TextChanged(object sender, EventArgs e)
         {
+            var bModeSettingCur =
+                        this.radioButtonAuto.Checked ? Properties.Resources.AutoEAN13Code128 :
+                        this.radioButtonEAN13.Checked ? Properties.Resources.EAN13 :
+                        this.radioButtonCode128.Checked ? Properties.Resources.EAN13 :
+                        Properties.Resources.AutoEAN13Code128;
             if (
                 //this.comboBoxConnections.Text == this.setting.Connection &&
                this.checkBoxPrintOnCommit.Checked == this.setting.PrintOnCommit &&
@@ -255,7 +245,10 @@ P{ 4}
                this.textBoxDataSource.Text == this.setting.DataSource.ToString() &&
                this.textBoxDatabase.Text == this.setting.Database.ToString() &&
                this.textBoxUserName.Text == this.setting.UserName.ToString() &&
-               this.textBoxPassword.Text == this.setting.Password.ToString())
+               this.textBoxPassword.Text == this.setting.Password.ToString() &&
+               this.textBoxEAN13ELN.Text == this.setting.EAN13ELN.ToString() &&
+               this.textBoxCode128ELN.Text == this.setting.Code128ELN.ToString() &&
+               bModeSettingCur == this.setting.BarcodeMode.ToString())
             {
                 this.buttonApply.Enabled = false;
             }
@@ -295,6 +288,11 @@ P{ 4}
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButtonAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBoxConnections_TextChanged(sender, e);
         }
     }
 }

@@ -143,9 +143,9 @@ namespace BarcodePrinter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\r\nN\r\nOD\r\nq344\r\nQ192,24\r\nD15\r\nS1\r\nA30,20,0,2,1,1,N,\\\"{0}\\\"\r\nB50,50,0,E30,2,5,80,B," +
-            "\\\"{1}\\\"\r\nA30,150,0,4,1,1,N,\\\"{2}.\\\"\r\nA90,150,0,4,1,1,N,\\\"{3}\\\"\r\nA140,175,0,1,1,1" +
-            ",N,\\nP{4}\r\n")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\nN\r\nOD\r\nq344\r\nQ192,24\r\nD15\r\nS1\r\nA30,20,0,2,1,1,N,\"{0}\"\r\nB50,50,0,E30,2,5,80,B,\"{" +
+            "1}\"\r\nA100,150,0,4,1,1,N,\"{2} \"\r\nA160,150,0,4,1,1,N,\"{3}\"\r\nA140,175,0,1,1,1,N,\r\nP" +
+            "{4}\r\n")]
         public string ELNFormatEAN13 {
             get {
                 return ((string)(this["ELNFormatEAN13"]));
@@ -157,9 +157,9 @@ namespace BarcodePrinter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\r\nN\r\nOD\r\nq344\r\nQ192,24\r\nD15\r\nS1\r\nA30,20,0,2,1,1,N,\\\"{0}\\\"\r\nB50,50,0,1,2,2,70,B,\\\"" +
-            "{1}\\\"\r\nA30,150,0,4,1,1,N,\\\"{2}.\\\"\r\nA90,150,0,4,1,1,N,\\\"{3}\\\"\r\nA140,175,0,1,1,1,N" +
-            ",\r\nP{4}\r\n")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\r\nN\r\nOD\r\nq344\r\nQ192,24\r\nD15\r\nS1\r\nA30,20,0,2,1,1,N,\"{0}\"\r\nB50,50,0,1,2,2,70,B,\"{1}" +
+            "\"\r\nA100,150,0,4,1,1,N,\"{2} \"\r\nA160,150,0,4,1,1,N,\"{3}\"\r\nA140,175,0,1,1,1,N,\r\nP{4" +
+            "}\r\n")]
         public string ELNFormatCode128 {
             get {
                 return ((string)(this["ELNFormatCode128"]));
@@ -171,7 +171,7 @@ namespace BarcodePrinter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Auto")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Auto EAN13 / Code 128")]
         public string BarcodeMode {
             get {
                 return ((string)(this["BarcodeMode"]));
