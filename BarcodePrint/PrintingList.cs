@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Data;
 using BarcodePrinter;
 using Com.SharpZebra.Printing;
+using System.IO;
+using System.Diagnostics;
 
 namespace BarCodePrinter
 {
@@ -16,7 +18,7 @@ namespace BarCodePrinter
         private bool f;
         private String tempStr;
         private String printerName;
-        public PrintingList(DataTable itemList,String printerName)
+        public PrintingList(DataTable itemList, String printerName)
         {
             this.printerName = printerName;
             DataRow item = itemList.Rows[0];
@@ -29,17 +31,31 @@ namespace BarCodePrinter
             {
                 label = null;
                 count = Int32.Parse(item[5].ToString());
-                     label = new BarcodeLabel()
-                    {
-                        Barcode = item[4].ToString(),
-                        Description = item[3].ToString(),
-                        Currency = item[8].ToString(),
-                        PriceWithTax = Decimal.Parse(item[9].ToString())
-                    };
-                for (i = 0; i < count; i++)
+                label = new BarcodeLabel()
                 {
-                    if (label != null)
-                        printer.Print(label.ELN);
+                    Barcode = item[4].ToString(),
+                    ItemId = item[1].ToString(),
+                    Description = item[3].ToString(),
+                    Currency = item[8].ToString(),
+                    PriceWithTax = Decimal.Parse(item[9].ToString()),
+                    Count = Int32.Parse(item[5].ToString())
+                };
+                if (label != null)
+                {
+                    try
+                    {
+                        string tempLog = string.Format("{0:dd MMM yyyy HH:mm:ss}{1}", DateTime.Now, label.ELN);
+                        const string file = "log.txt";
+                        using (StreamWriter w = File.AppendText(file))
+                        {
+                            w.WriteLine(tempLog);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        Debug.Assert(true, "Loging error");
+                    }
+                    printer.Print(label.ELN);
                 }
                 itemList.Rows.Remove(item);
                 item = itemList.Rows[0];
@@ -50,7 +66,7 @@ namespace BarCodePrinter
                 //tempStr = (item[2]).ToString();
                 //Boolean.TryParse(tempStr, out f);
                 //this.Add((Barcode)item[7]);
-            } while (itemList.Rows.Count>0);
+            } while (itemList.Rows.Count > 0);
             //this.print();
         }
 

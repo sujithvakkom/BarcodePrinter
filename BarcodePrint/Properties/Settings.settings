@@ -77,5 +77,14 @@ P{4}
     <Setting Name="BarcodeMode" Type="System.String" Scope="User">
       <Value Profile="(Default)">Auto EAN13 / Code 128</Value>
     </Setting>
+    <Setting Name="Application" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LSONE</Value>
+    </Setting>
+    <Setting Name="Company" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Store" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -70,6 +70,7 @@ namespace BarCodePrinter
             this.barcodePanel = new System.Windows.Forms.PictureBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.synchProgress = new BarcodePrinter.MYProgressView();
+            this.buttonItemLookup = new System.Windows.Forms.Button();
             this.jobListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectedDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemListForPrint)).BeginInit();
@@ -102,7 +103,7 @@ namespace BarCodePrinter
             // barCodeTextBox
             // 
             this.barCodeTextBox.Location = new System.Drawing.Point(163, 46);
-            this.barCodeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barCodeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.barCodeTextBox.MaxLength = 13;
             this.barCodeTextBox.Name = "barCodeTextBox";
             this.barCodeTextBox.Size = new System.Drawing.Size(193, 22);
@@ -113,7 +114,7 @@ namespace BarCodePrinter
             // 
             this.numberTextBox.Enabled = false;
             this.numberTextBox.Location = new System.Drawing.Point(163, 76);
-            this.numberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numberTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.numberTextBox.MaxLength = 13;
             this.numberTextBox.Name = "numberTextBox";
             this.numberTextBox.Size = new System.Drawing.Size(193, 22);
@@ -126,7 +127,7 @@ namespace BarCodePrinter
             // 
             this.addToPrintListButton.Enabled = false;
             this.addToPrintListButton.Location = new System.Drawing.Point(209, 137);
-            this.addToPrintListButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addToPrintListButton.Margin = new System.Windows.Forms.Padding(4);
             this.addToPrintListButton.Name = "addToPrintListButton";
             this.addToPrintListButton.Size = new System.Drawing.Size(148, 28);
             this.addToPrintListButton.TabIndex = 4;
@@ -138,7 +139,7 @@ namespace BarCodePrinter
             // 
             this.printButton.Enabled = false;
             this.printButton.Location = new System.Drawing.Point(627, 170);
-            this.printButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.printButton.Margin = new System.Windows.Forms.Padding(4);
             this.printButton.Name = "printButton";
             this.printButton.Size = new System.Drawing.Size(84, 28);
             this.printButton.TabIndex = 5;
@@ -154,7 +155,7 @@ namespace BarCodePrinter
             | System.Windows.Forms.AnchorStyles.Right)));
             this.jobListPanel.Controls.Add(this.selectedDataGridView);
             this.jobListPanel.Location = new System.Drawing.Point(0, 215);
-            this.jobListPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.jobListPanel.Margin = new System.Windows.Forms.Padding(4);
             this.jobListPanel.Name = "jobListPanel";
             this.jobListPanel.Size = new System.Drawing.Size(891, 366);
             this.jobListPanel.TabIndex = 7;
@@ -189,7 +190,7 @@ namespace BarCodePrinter
             this.selectedDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.selectedDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.selectedDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.selectedDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.selectedDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.selectedDataGridView.MinimumSize = new System.Drawing.Size(879, 337);
             this.selectedDataGridView.Name = "selectedDataGridView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -246,7 +247,7 @@ namespace BarCodePrinter
             this.discriptionListBox.FormattingEnabled = true;
             this.discriptionListBox.ItemHeight = 16;
             this.discriptionListBox.Location = new System.Drawing.Point(364, 64);
-            this.discriptionListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.discriptionListBox.Margin = new System.Windows.Forms.Padding(4);
             this.discriptionListBox.Name = "discriptionListBox";
             this.discriptionListBox.Size = new System.Drawing.Size(485, 100);
             this.discriptionListBox.TabIndex = 8;
@@ -258,7 +259,7 @@ namespace BarCodePrinter
             // 
             this.removeListButton.Enabled = false;
             this.removeListButton.Location = new System.Drawing.Point(719, 170);
-            this.removeListButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.removeListButton.Margin = new System.Windows.Forms.Padding(4);
             this.removeListButton.Name = "removeListButton";
             this.removeListButton.Size = new System.Drawing.Size(133, 28);
             this.removeListButton.TabIndex = 6;
@@ -319,7 +320,7 @@ namespace BarCodePrinter
             // 
             this.customeDiscriprionTextBox.Enabled = false;
             this.customeDiscriprionTextBox.Location = new System.Drawing.Point(163, 107);
-            this.customeDiscriprionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customeDiscriprionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.customeDiscriprionTextBox.MaxLength = 40;
             this.customeDiscriprionTextBox.Name = "customeDiscriprionTextBox";
             this.customeDiscriprionTextBox.Size = new System.Drawing.Size(193, 22);
@@ -331,7 +332,7 @@ namespace BarCodePrinter
             this.printerListComboBox.Enabled = false;
             this.printerListComboBox.FormattingEnabled = true;
             this.printerListComboBox.Location = new System.Drawing.Point(431, 171);
-            this.printerListComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.printerListComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.printerListComboBox.Name = "printerListComboBox";
             this.printerListComboBox.Size = new System.Drawing.Size(189, 24);
             this.printerListComboBox.TabIndex = 12;
@@ -432,7 +433,7 @@ namespace BarCodePrinter
             // barcodePanel
             // 
             this.barcodePanel.Location = new System.Drawing.Point(365, 41);
-            this.barcodePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barcodePanel.Margin = new System.Windows.Forms.Padding(4);
             this.barcodePanel.MaximumSize = new System.Drawing.Size(400, 246);
             this.barcodePanel.MinimumSize = new System.Drawing.Size(200, 123);
             this.barcodePanel.Name = "barcodePanel";
@@ -461,11 +462,22 @@ namespace BarCodePrinter
             this.synchProgress.TabIndex = 19;
             this.synchProgress.Text = "myProgressView1";
             // 
+            // buttonItemLookup
+            // 
+            this.buttonItemLookup.Location = new System.Drawing.Point(77, 137);
+            this.buttonItemLookup.Name = "buttonItemLookup";
+            this.buttonItemLookup.Size = new System.Drawing.Size(125, 28);
+            this.buttonItemLookup.TabIndex = 20;
+            this.buttonItemLookup.Text = "Item Lookup";
+            this.buttonItemLookup.UseVisualStyleBackColor = true;
+            this.buttonItemLookup.Click += new System.EventHandler(this.buttonItemLookup_Click);
+            // 
             // barcodePrinterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 609);
+            this.Controls.Add(this.buttonItemLookup);
             this.Controls.Add(this.synchProgress);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.printModeLabel);
@@ -490,7 +502,7 @@ namespace BarCodePrinter
             this.Controls.Add(this.barcodePanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.modeOfPrinting;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(906, 645);
             this.Name = "barcodePrinterForm";
@@ -551,6 +563,7 @@ namespace BarCodePrinter
         private ToolStripMenuItem settingsToolStripMenuItemSettings;
         private StatusStrip statusStrip;
         private MYProgressView synchProgress;
+        private Button buttonItemLookup;
     }
 }
 

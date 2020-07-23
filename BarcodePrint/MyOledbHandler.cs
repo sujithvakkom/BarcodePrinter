@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using BarcodePrinter.Properties;
 
 namespace BarcodePrinter
 {
@@ -131,21 +132,22 @@ namespace BarcodePrinter
             builder.Password = BarcodePrinter.Properties.Settings.Default.Password;
             builder.InitialCatalog = BarcodePrinter.Properties.Settings.Default.Database;
             string cons = builder.ToString();
-            string cmd = @"SELECT TOP (10) ITM.ITEMID AS ITEM_CODE,
-                ITM.ITEMNAME AS ITEM_NAME,
-                BAR.ITEMBARCODE AS CROSS_REFERENCE,
-			 'AED' as CURRENCY,
-                ISNULL(DISC.AMOUNTINCLTAX, ITM.SALESPRICEINCLTAX) AS SALESPRICEINCLTAX
-FROM RETAILITEM ITM
-     INNER JOIN INVENTITEMBARCODE BAR ON ITM.ITEMID = BAR.ITEMID
-     LEFT JOIN PRICEDISCTABLE DISC ON ITM.ITEMID = DISC.ITEMRELATION
-                                      AND bar.UNITID = DISC.UNITID
-WHERE isnull(DISC.ACCOUNTCODE, 2) = 2
-      AND isnull(DISC.RELATION, 4) = 4
-      AND ITM.DELETED = 0
-      AND (ITM.ITEMID LIKE @ITEMID
-           OR BAR.ITEMBARCODE LIKE @ITEMBARCODE)
-ORDER BY ITEM_CODE";
+            string cmd = "";
+            switch (Properties.Settings.Default.Application)
+            {
+                case "LSAPPS":
+                    cmd = Resources.LSOneItemQuery;
+                    break;
+                case "NAV":
+                    string temp =Resources.NAVItemQuery;
+                    cmd = String.Format(temp,
+                        Properties.Settings.Default.Company);
+                    break;
+                default:
+                    cmd =Resources.LSOneItemQuery;
+                    break;
+
+            }
             using (SqlConnection connection = new SqlConnection(cons))
             using (SqlCommand command = new SqlCommand(cmd, connection))
             {
@@ -154,6 +156,8 @@ ORDER BY ITEM_CODE";
                     connection.Open();
                     command.Parameters.AddWithValue("@ITEMID", value+"%");
                     command.Parameters.AddWithValue("@ITEMBARCODE", value+"%");
+                    command.Parameters.AddWithValue("@Description", value + "%");
+                    command.Parameters.AddWithValue("@Store", Properties.Settings.Default.Store);
                     SqlDataAdapter adaptor = new SqlDataAdapter(command);
                     adaptor.Fill(itemDiscription);
                 }
@@ -214,6 +218,84 @@ ORDER BY ITEM_CODE";
                     connection.Close();
             }
             return connection;
+        }
+
+        internal static Dictionary<string, string> GetStores(string company)
+        {
+            var result = new Dictionary<string, string>();
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder("");
+            builder.DataSource = BarcodePrinter.Properties.Settings.Default.DataSource;
+            builder.UserID = BarcodePrinter.Properties.Settings.Default.UserName;
+            builder.Password = BarcodePrinter.Properties.Settings.Default.Password;
+            builder.InitialCatalog = BarcodePrinter.Properties.Settings.Default.Database;
+            string cons = builder.ToString();
+            string temp =
+                @"select No_ as Value,Name as Text from [dbo].[{0}$Store]";
+            string cmd = String.Format(temp,
+                company);
+            using (SqlConnection connection = new SqlConnection(cons))
+            using (SqlCommand command = new SqlCommand(cmd, connection))
+            {
+                try
+                {
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(reader.GetString(1), reader.GetString(0));
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    if (connection.State != ConnectionState.Closed) connection.Close();
+                }
+            }
+            return result;
+        }
+        internal static string GetStoreCurrency(string store, string company)
+        {
+            var result = "-N-";
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder("");
+            builder.DataSource = BarcodePrinter.Properties.Settings.Default.DataSource;
+            builder.UserID = BarcodePrinter.Properties.Settings.Default.UserName;
+            builder.Password = BarcodePrinter.Properties.Settings.Default.Password;
+            builder.InitialCatalog = BarcodePrinter.Properties.Settings.Default.Database;
+            string cons = builder.ToString();
+            string temp =
+                @"select [Currency Code] from [dbo].[{0}$Store] where No_ = @Store";
+            string cmd = String.Format(temp,
+                company);
+            using (SqlConnection connection = new SqlConnection(cons))
+            using (SqlCommand command = new SqlCommand(cmd, connection))
+            {
+                try
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@Store", store);
+                    using (var reader = command.ExecuteReader(CommandBehavior.SingleRow))
+                    {
+                        while (reader.Read())
+                        {
+                            result = reader.GetString(0);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    if (connection.State != ConnectionState.Closed) connection.Close();
+                }
+            }
+            return result;
         }
     }
 }

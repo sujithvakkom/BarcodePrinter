@@ -59,16 +59,34 @@ namespace BarcodePrinter
             this.radioButtonCode128 = new System.Windows.Forms.RadioButton();
             this.radioButtonEAN13 = new System.Windows.Forms.RadioButton();
             this.radioButtonAuto = new System.Windows.Forms.RadioButton();
+            this.groupBoxApplication = new System.Windows.Forms.GroupBox();
+            this.labelCurrency = new System.Windows.Forms.Label();
+            this.comboBoxStore = new System.Windows.Forms.ComboBox();
+            this.buttonSaveApplicationSettings = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioButtonLSOne = new System.Windows.Forms.RadioButton();
+            this.radioButtonNAV = new System.Windows.Forms.RadioButton();
+            this.labelStore = new System.Windows.Forms.Label();
+            this.labelCompany = new System.Windows.Forms.Label();
+            this.textBoxCompany = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrintTest = new System.Windows.Forms.Button();
+            this.tbSample = new System.Windows.Forms.TextBox();
+            this.tbDesc = new System.Windows.Forms.TextBox();
+            this.setDefault = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.connectionSettingsGroupBox.SuspendLayout();
             this.printerSettingsGroupBox.SuspendLayout();
             this.groupBoxBarcodeMode.SuspendLayout();
+            this.groupBoxApplication.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxPrinters
             // 
             this.comboBoxPrinters.FormattingEnabled = true;
             this.comboBoxPrinters.Location = new System.Drawing.Point(124, 24);
-            this.comboBoxPrinters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxPrinters.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPrinters.Name = "comboBoxPrinters";
             this.comboBoxPrinters.Size = new System.Drawing.Size(211, 24);
             this.comboBoxPrinters.TabIndex = 5;
@@ -87,10 +105,10 @@ namespace BarcodePrinter
             // buttonApply
             // 
             this.buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonApply.Location = new System.Drawing.Point(395, 495);
-            this.buttonApply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonApply.Location = new System.Drawing.Point(850, 591);
+            this.buttonApply.Margin = new System.Windows.Forms.Padding(4);
             this.buttonApply.Name = "buttonApply";
-            this.buttonApply.Size = new System.Drawing.Size(100, 28);
+            this.buttonApply.Size = new System.Drawing.Size(100, 48);
             this.buttonApply.TabIndex = 9;
             this.buttonApply.Text = "Apply";
             this.buttonApply.UseVisualStyleBackColor = true;
@@ -109,7 +127,7 @@ namespace BarcodePrinter
             // textBoxFontSize
             // 
             this.textBoxFontSize.Location = new System.Drawing.Point(124, 88);
-            this.textBoxFontSize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFontSize.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFontSize.Name = "textBoxFontSize";
             this.textBoxFontSize.Size = new System.Drawing.Size(211, 22);
             this.textBoxFontSize.TabIndex = 7;
@@ -122,10 +140,10 @@ namespace BarcodePrinter
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonOk.Location = new System.Drawing.Point(507, 495);
-            this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOk.Location = new System.Drawing.Point(962, 591);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(100, 28);
+            this.buttonOk.Size = new System.Drawing.Size(100, 48);
             this.buttonOk.TabIndex = 10;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
@@ -174,7 +192,7 @@ namespace BarcodePrinter
             // textBoxDataSource
             // 
             this.textBoxDataSource.Location = new System.Drawing.Point(124, 24);
-            this.textBoxDataSource.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDataSource.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDataSource.Name = "textBoxDataSource";
             this.textBoxDataSource.Size = new System.Drawing.Size(211, 22);
             this.textBoxDataSource.TabIndex = 1;
@@ -183,7 +201,7 @@ namespace BarcodePrinter
             // textBoxDatabase
             // 
             this.textBoxDatabase.Location = new System.Drawing.Point(124, 56);
-            this.textBoxDatabase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDatabase.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDatabase.Name = "textBoxDatabase";
             this.textBoxDatabase.Size = new System.Drawing.Size(211, 22);
             this.textBoxDatabase.TabIndex = 2;
@@ -192,7 +210,7 @@ namespace BarcodePrinter
             // textBoxUserName
             // 
             this.textBoxUserName.Location = new System.Drawing.Point(124, 88);
-            this.textBoxUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUserName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUserName.Name = "textBoxUserName";
             this.textBoxUserName.Size = new System.Drawing.Size(211, 22);
             this.textBoxUserName.TabIndex = 3;
@@ -201,7 +219,7 @@ namespace BarcodePrinter
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(124, 120);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(211, 22);
             this.textBoxPassword.TabIndex = 4;
@@ -212,7 +230,7 @@ namespace BarcodePrinter
             // 
             this.checkBoxPrintOnCommit.AutoSize = true;
             this.checkBoxPrintOnCommit.Location = new System.Drawing.Point(204, 117);
-            this.checkBoxPrintOnCommit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxPrintOnCommit.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxPrintOnCommit.Name = "checkBoxPrintOnCommit";
             this.checkBoxPrintOnCommit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBoxPrintOnCommit.Size = new System.Drawing.Size(129, 21);
@@ -233,10 +251,10 @@ namespace BarcodePrinter
             this.connectionSettingsGroupBox.Controls.Add(this.labelPassword);
             this.connectionSettingsGroupBox.Controls.Add(this.textBoxDatabase);
             this.connectionSettingsGroupBox.Controls.Add(this.textBoxDataSource);
-            this.connectionSettingsGroupBox.Location = new System.Drawing.Point(16, 15);
-            this.connectionSettingsGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.connectionSettingsGroupBox.Location = new System.Drawing.Point(16, 270);
+            this.connectionSettingsGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.connectionSettingsGroupBox.Name = "connectionSettingsGroupBox";
-            this.connectionSettingsGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.connectionSettingsGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.connectionSettingsGroupBox.Size = new System.Drawing.Size(352, 186);
             this.connectionSettingsGroupBox.TabIndex = 12;
             this.connectionSettingsGroupBox.TabStop = false;
@@ -245,7 +263,7 @@ namespace BarcodePrinter
             // buttonTestConnection
             // 
             this.buttonTestConnection.Location = new System.Drawing.Point(200, 152);
-            this.buttonTestConnection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTestConnection.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTestConnection.Name = "buttonTestConnection";
             this.buttonTestConnection.Size = new System.Drawing.Size(136, 28);
             this.buttonTestConnection.TabIndex = 11;
@@ -263,10 +281,10 @@ namespace BarcodePrinter
             this.printerSettingsGroupBox.Controls.Add(this.label1);
             this.printerSettingsGroupBox.Controls.Add(this.marginTextBox);
             this.printerSettingsGroupBox.Controls.Add(this.textBoxFontSize);
-            this.printerSettingsGroupBox.Location = new System.Drawing.Point(16, 208);
-            this.printerSettingsGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.printerSettingsGroupBox.Location = new System.Drawing.Point(16, 463);
+            this.printerSettingsGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.printerSettingsGroupBox.Name = "printerSettingsGroupBox";
-            this.printerSettingsGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.printerSettingsGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.printerSettingsGroupBox.Size = new System.Drawing.Size(352, 145);
             this.printerSettingsGroupBox.TabIndex = 13;
             this.printerSettingsGroupBox.TabStop = false;
@@ -285,7 +303,7 @@ namespace BarcodePrinter
             // marginTextBox
             // 
             this.marginTextBox.Location = new System.Drawing.Point(124, 56);
-            this.marginTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.marginTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.marginTextBox.Name = "marginTextBox";
             this.marginTextBox.Size = new System.Drawing.Size(211, 22);
             this.marginTextBox.TabIndex = 6;
@@ -297,7 +315,7 @@ namespace BarcodePrinter
             // textBoxEAN13Sample
             // 
             this.textBoxEAN13Sample.Location = new System.Drawing.Point(396, 48);
-            this.textBoxEAN13Sample.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEAN13Sample.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEAN13Sample.Multiline = true;
             this.textBoxEAN13Sample.Name = "textBoxEAN13Sample";
             this.textBoxEAN13Sample.ReadOnly = true;
@@ -309,7 +327,7 @@ namespace BarcodePrinter
             // textBoxCode128Sample
             // 
             this.textBoxCode128Sample.Location = new System.Drawing.Point(396, 281);
-            this.textBoxCode128Sample.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCode128Sample.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCode128Sample.Multiline = true;
             this.textBoxCode128Sample.Name = "textBoxCode128Sample";
             this.textBoxCode128Sample.ReadOnly = true;
@@ -320,7 +338,7 @@ namespace BarcodePrinter
             // textBoxEAN13ELN
             // 
             this.textBoxEAN13ELN.Location = new System.Drawing.Point(737, 48);
-            this.textBoxEAN13ELN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEAN13ELN.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEAN13ELN.Multiline = true;
             this.textBoxEAN13ELN.Name = "textBoxEAN13ELN";
             this.textBoxEAN13ELN.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -331,7 +349,7 @@ namespace BarcodePrinter
             // textBoxCode128ELN
             // 
             this.textBoxCode128ELN.Location = new System.Drawing.Point(737, 281);
-            this.textBoxCode128ELN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCode128ELN.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCode128ELN.Multiline = true;
             this.textBoxCode128ELN.Name = "textBoxCode128ELN";
             this.textBoxCode128ELN.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -364,10 +382,10 @@ namespace BarcodePrinter
             this.groupBoxBarcodeMode.Controls.Add(this.radioButtonCode128);
             this.groupBoxBarcodeMode.Controls.Add(this.radioButtonEAN13);
             this.groupBoxBarcodeMode.Controls.Add(this.radioButtonAuto);
-            this.groupBoxBarcodeMode.Location = new System.Drawing.Point(16, 377);
-            this.groupBoxBarcodeMode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxBarcodeMode.Location = new System.Drawing.Point(396, 494);
+            this.groupBoxBarcodeMode.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxBarcodeMode.Name = "groupBoxBarcodeMode";
-            this.groupBoxBarcodeMode.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxBarcodeMode.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxBarcodeMode.Size = new System.Drawing.Size(352, 145);
             this.groupBoxBarcodeMode.TabIndex = 15;
             this.groupBoxBarcodeMode.TabStop = false;
@@ -377,7 +395,7 @@ namespace BarcodePrinter
             // 
             this.radioButtonCode128.AutoSize = true;
             this.radioButtonCode128.Location = new System.Drawing.Point(21, 97);
-            this.radioButtonCode128.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonCode128.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonCode128.Name = "radioButtonCode128";
             this.radioButtonCode128.Size = new System.Drawing.Size(17, 16);
             this.radioButtonCode128.TabIndex = 3;
@@ -387,7 +405,7 @@ namespace BarcodePrinter
             // 
             this.radioButtonEAN13.AutoSize = true;
             this.radioButtonEAN13.Location = new System.Drawing.Point(21, 67);
-            this.radioButtonEAN13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonEAN13.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonEAN13.Name = "radioButtonEAN13";
             this.radioButtonEAN13.Size = new System.Drawing.Size(17, 16);
             this.radioButtonEAN13.TabIndex = 3;
@@ -398,7 +416,7 @@ namespace BarcodePrinter
             this.radioButtonAuto.AutoSize = true;
             this.radioButtonAuto.Checked = true;
             this.radioButtonAuto.Location = new System.Drawing.Point(21, 36);
-            this.radioButtonAuto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonAuto.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonAuto.Name = "radioButtonAuto";
             this.radioButtonAuto.Size = new System.Drawing.Size(17, 16);
             this.radioButtonAuto.TabIndex = 3;
@@ -406,13 +424,181 @@ namespace BarcodePrinter
             this.radioButtonAuto.UseVisualStyleBackColor = true;
             this.radioButtonAuto.CheckedChanged += new System.EventHandler(this.radioButtonAuto_CheckedChanged);
             // 
+            // groupBoxApplication
+            // 
+            this.groupBoxApplication.Controls.Add(this.labelCurrency);
+            this.groupBoxApplication.Controls.Add(this.comboBoxStore);
+            this.groupBoxApplication.Controls.Add(this.buttonSaveApplicationSettings);
+            this.groupBoxApplication.Controls.Add(this.flowLayoutPanel1);
+            this.groupBoxApplication.Controls.Add(this.labelStore);
+            this.groupBoxApplication.Controls.Add(this.labelCompany);
+            this.groupBoxApplication.Controls.Add(this.textBoxCompany);
+            this.groupBoxApplication.Controls.Add(this.panel1);
+            this.groupBoxApplication.Location = new System.Drawing.Point(16, 4);
+            this.groupBoxApplication.Name = "groupBoxApplication";
+            this.groupBoxApplication.Size = new System.Drawing.Size(352, 240);
+            this.groupBoxApplication.TabIndex = 16;
+            this.groupBoxApplication.TabStop = false;
+            this.groupBoxApplication.Text = "Aplication";
+            // 
+            // labelCurrency
+            // 
+            this.labelCurrency.AutoSize = true;
+            this.labelCurrency.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrency.Location = new System.Drawing.Point(254, 131);
+            this.labelCurrency.Name = "labelCurrency";
+            this.labelCurrency.Size = new System.Drawing.Size(72, 17);
+            this.labelCurrency.TabIndex = 13;
+            this.labelCurrency.Text = "0.000-N-";
+            this.labelCurrency.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // comboBoxStore
+            // 
+            this.comboBoxStore.FormattingEnabled = true;
+            this.comboBoxStore.Location = new System.Drawing.Point(122, 102);
+            this.comboBoxStore.Name = "comboBoxStore";
+            this.comboBoxStore.Size = new System.Drawing.Size(211, 24);
+            this.comboBoxStore.TabIndex = 12;
+            this.comboBoxStore.SelectedValueChanged += new System.EventHandler(this.comboBoxStore_SelectedValueChanged);
+            // 
+            // buttonSaveApplicationSettings
+            // 
+            this.buttonSaveApplicationSettings.Location = new System.Drawing.Point(209, 161);
+            this.buttonSaveApplicationSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSaveApplicationSettings.Name = "buttonSaveApplicationSettings";
+            this.buttonSaveApplicationSettings.Size = new System.Drawing.Size(136, 28);
+            this.buttonSaveApplicationSettings.TabIndex = 11;
+            this.buttonSaveApplicationSettings.TabStop = false;
+            this.buttonSaveApplicationSettings.Text = "Save Application Settings";
+            this.buttonSaveApplicationSettings.UseVisualStyleBackColor = true;
+            this.buttonSaveApplicationSettings.Click += new System.EventHandler(this.buttonSaveApplicationSettings_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.radioButtonLSOne);
+            this.flowLayoutPanel1.Controls.Add(this.radioButtonNAV);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 32);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(332, 33);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // radioButtonLSOne
+            // 
+            this.radioButtonLSOne.AutoSize = true;
+            this.radioButtonLSOne.Location = new System.Drawing.Point(3, 3);
+            this.radioButtonLSOne.Name = "radioButtonLSOne";
+            this.radioButtonLSOne.Size = new System.Drawing.Size(77, 21);
+            this.radioButtonLSOne.TabIndex = 0;
+            this.radioButtonLSOne.TabStop = true;
+            this.radioButtonLSOne.Text = "LS One";
+            this.radioButtonLSOne.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNAV
+            // 
+            this.radioButtonNAV.AutoSize = true;
+            this.radioButtonNAV.Location = new System.Drawing.Point(86, 3);
+            this.radioButtonNAV.Name = "radioButtonNAV";
+            this.radioButtonNAV.Size = new System.Drawing.Size(75, 21);
+            this.radioButtonNAV.TabIndex = 1;
+            this.radioButtonNAV.TabStop = true;
+            this.radioButtonNAV.Text = "LS Nav";
+            this.radioButtonNAV.UseVisualStyleBackColor = true;
+            // 
+            // labelStore
+            // 
+            this.labelStore.AutoSize = true;
+            this.labelStore.Location = new System.Drawing.Point(74, 105);
+            this.labelStore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelStore.Name = "labelStore";
+            this.labelStore.Size = new System.Drawing.Size(42, 17);
+            this.labelStore.TabIndex = 1;
+            this.labelStore.Text = "Store";
+            // 
+            // labelCompany
+            // 
+            this.labelCompany.AutoSize = true;
+            this.labelCompany.Location = new System.Drawing.Point(49, 75);
+            this.labelCompany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCompany.Name = "labelCompany";
+            this.labelCompany.Size = new System.Drawing.Size(67, 17);
+            this.labelCompany.TabIndex = 1;
+            this.labelCompany.Text = "Company";
+            // 
+            // textBoxCompany
+            // 
+            this.textBoxCompany.Location = new System.Drawing.Point(122, 72);
+            this.textBoxCompany.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCompany.Name = "textBoxCompany";
+            this.textBoxCompany.Size = new System.Drawing.Size(211, 22);
+            this.textBoxCompany.TabIndex = 1;
+            this.textBoxCompany.TextChanged += new System.EventHandler(this.textBoxCompany_TextChanged);
+            this.textBoxCompany.Leave += new System.EventHandler(this.textBoxCompany_Leave);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(200, 110);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(138, 28);
+            this.panel1.TabIndex = 17;
+            // 
+            // btnPrintTest
+            // 
+            this.btnPrintTest.Location = new System.Drawing.Point(962, 490);
+            this.btnPrintTest.Name = "btnPrintTest";
+            this.btnPrintTest.Size = new System.Drawing.Size(95, 50);
+            this.btnPrintTest.TabIndex = 17;
+            this.btnPrintTest.Text = "Print Test";
+            this.btnPrintTest.UseVisualStyleBackColor = true;
+            this.btnPrintTest.Click += new System.EventHandler(this.btnPrintTest_Click);
+            // 
+            // tbSample
+            // 
+            this.tbSample.Location = new System.Drawing.Point(792, 487);
+            this.tbSample.Name = "tbSample";
+            this.tbSample.Size = new System.Drawing.Size(164, 22);
+            this.tbSample.TabIndex = 18;
+            // 
+            // tbDesc
+            // 
+            this.tbDesc.Location = new System.Drawing.Point(792, 515);
+            this.tbDesc.Name = "tbDesc";
+            this.tbDesc.Size = new System.Drawing.Size(164, 22);
+            this.tbDesc.TabIndex = 18;
+            // 
+            // setDefault
+            // 
+            this.setDefault.Location = new System.Drawing.Point(962, 546);
+            this.setDefault.Name = "setDefault";
+            this.setDefault.Size = new System.Drawing.Size(95, 31);
+            this.setDefault.TabIndex = 19;
+            this.setDefault.Text = "Set Default";
+            this.setDefault.UseVisualStyleBackColor = true;
+            this.setDefault.Click += new System.EventHandler(this.setDefault_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(861, 543);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 31);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Clean Log";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.clearLog_Click);
+            // 
             // FormSettings
             // 
             this.AcceptButton = this.buttonApply;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonOk;
-            this.ClientSize = new System.Drawing.Size(1075, 532);
+            this.ClientSize = new System.Drawing.Size(1075, 657);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.setDefault);
+            this.Controls.Add(this.tbDesc);
+            this.Controls.Add(this.tbSample);
+            this.Controls.Add(this.btnPrintTest);
+            this.Controls.Add(this.groupBoxApplication);
             this.Controls.Add(this.groupBoxBarcodeMode);
             this.Controls.Add(this.textBoxCode128Sample);
             this.Controls.Add(this.labelEAN13ELN);
@@ -425,9 +611,8 @@ namespace BarcodePrinter
             this.Controls.Add(this.textBoxCode128ELN);
             this.Controls.Add(this.textBoxEAN13ELN);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1098, 595);
             this.MinimizeBox = false;
             this.Name = "FormSettings";
             this.ShowInTaskbar = false;
@@ -440,6 +625,10 @@ namespace BarcodePrinter
             this.printerSettingsGroupBox.PerformLayout();
             this.groupBoxBarcodeMode.ResumeLayout(false);
             this.groupBoxBarcodeMode.PerformLayout();
+            this.groupBoxApplication.ResumeLayout(false);
+            this.groupBoxApplication.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,5 +666,21 @@ namespace BarcodePrinter
         private System.Windows.Forms.RadioButton radioButtonCode128;
         private System.Windows.Forms.RadioButton radioButtonEAN13;
         private System.Windows.Forms.RadioButton radioButtonAuto;
+        private System.Windows.Forms.GroupBox groupBoxApplication;
+        private System.Windows.Forms.Button buttonSaveApplicationSettings;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.RadioButton radioButtonLSOne;
+        private System.Windows.Forms.RadioButton radioButtonNAV;
+        private System.Windows.Forms.Label labelCompany;
+        private System.Windows.Forms.TextBox textBoxCompany;
+        private System.Windows.Forms.ComboBox comboBoxStore;
+        private System.Windows.Forms.Label labelStore;
+        private System.Windows.Forms.Label labelCurrency;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnPrintTest;
+        private System.Windows.Forms.TextBox tbSample;
+        private System.Windows.Forms.TextBox tbDesc;
+        private System.Windows.Forms.Button setDefault;
+        private System.Windows.Forms.Button button1;
     }
 }

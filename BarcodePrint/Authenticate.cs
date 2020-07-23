@@ -18,7 +18,7 @@ namespace BarcodePrinter
         private void buttonOK_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
-            string pass = @"ADMIN" + now.ToString("ddMMyy");
+            string pass = @"ADMIN" + now.ToString("ddMMyyyy");
             string user = this.textBoxUserName.Text.Trim();
             string password = this.textBoxPassword.Text.Trim();
             this.DialogResult =

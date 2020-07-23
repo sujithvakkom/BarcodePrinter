@@ -30,3 +30,5 @@ C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\Barco
 C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.csproj.GenerateResource.Cache
 C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.exe
 C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.pdb
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.FormItemLookup.resources
+C:\Users\srkrishnan\Documents\GitHub\BarcodePrinter\BarcodePrint\obj\Debug\BarcodePrinter.csprojResolveAssemblyReference.cache

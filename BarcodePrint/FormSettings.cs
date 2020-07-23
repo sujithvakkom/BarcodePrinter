@@ -8,12 +8,19 @@ using System.Windows.Forms;
 using System.Drawing.Printing;
 using BarCodePrinter;
 using System.Data.OleDb;
+using System.Threading;
+using Com.SharpZebra.Printing;
+using System.IO;
 
 namespace BarcodePrinter
 {
     public partial class FormSettings : Form
     {
         Settings setting;
+
+        static Thread loadStoreThread;
+
+        /**/
         struct Settings
         {
             String _Connection;
@@ -28,6 +35,8 @@ namespace BarcodePrinter
             private string _EAN13ELN;
             private string _Code128ELN;
             private string _BarcodeMode;
+            private string _Application;
+            private string _Company;
 
             public String Connection { get { return _Connection; } set { _Connection = value; } }
             public String DataSource { get { return _DataSource; } set { _DataSource = value; } }
@@ -55,14 +64,16 @@ namespace BarcodePrinter
                 _EAN13ELN = Properties.Settings.Default.ELNFormatEAN13;
                 _Code128ELN = Properties.Settings.Default.ELNFormatCode128;
                 _BarcodeMode = Properties.Settings.Default.BarcodeMode;
+                _Application = Properties.Settings.Default.Application;
+                _Company = Properties.Settings.Default.Company;
             }
         }
         public FormSettings()
         {
             InitializeComponent();
             setting = new Settings(true);
-            this.textBoxEAN13Sample.Text = Properties.Resources.SampleCode128ELN;
-            this.textBoxCode128Sample.Text= Properties.Resources.SampleCode128ELN;
+            this.textBoxEAN13Sample.Text = Properties.Resources.SampleEAN13ELN;
+            this.textBoxCode128Sample.Text = Properties.Resources.SampleCode128ELN;
         }
 
         private void FormSettings_Load(object sender, EventArgs e)
@@ -90,10 +101,13 @@ namespace BarcodePrinter
             this.checkBoxPrintOnCommit.Checked = Properties.Settings.Default.PrintOnCommit;
             this.textBoxEAN13ELN.Text = Properties.Settings.Default.ELNFormatEAN13.ToString();
             this.textBoxCode128ELN.Text = Properties.Settings.Default.ELNFormatCode128.ToString();
-            this.Size = new Size(827,471);
+            this.Size = new Size(1093, 704);
             this.radioButtonAuto.Text = Properties.Resources.AutoEAN13Code128;
             this.radioButtonEAN13.Text = Properties.Resources.EAN13;
             this.radioButtonCode128.Text = Properties.Resources.Code128;
+            this.radioButtonLSOne.Checked = (Properties.Settings.Default.Application == Properties.Resources.DefaultApplication);
+            this.radioButtonNAV.Checked = (Properties.Settings.Default.Application != Properties.Resources.DefaultApplication);
+            this.textBoxCompany.Text = Properties.Settings.Default.Company;
             foreach (var x in this.groupBoxBarcodeMode.Controls)
             {
                 if (x.GetType() == typeof(RadioButton))
@@ -193,8 +207,19 @@ namespace BarcodePrinter
                     Properties.Settings.Default.BarcodeMode =
                         this.radioButtonAuto.Checked ? Properties.Resources.AutoEAN13Code128 :
                         this.radioButtonEAN13.Checked ? Properties.Resources.EAN13 :
-                        this.radioButtonCode128.Checked ? Properties.Resources.EAN13 : 
+                        this.radioButtonCode128.Checked ? Properties.Resources.EAN13 :
                         Properties.Resources.AutoEAN13Code128;
+                }
+                catch (Exception)
+                {
+
+                }
+                try
+                {
+                    Properties.Settings.Default.Application =
+                        this.radioButtonLSOne.Checked ? "LSONE" : this.radioButtonNAV.Checked ? "NAV" :
+                        Properties.Resources.DefaultApplication;
+                    Properties.Settings.Default.Company = this.textBoxCompany.Text.Trim();
                 }
                 catch (Exception)
                 {
@@ -202,13 +227,11 @@ namespace BarcodePrinter
                 }
                 Properties.Settings.Default.Save();
                 this.buttonApply.Enabled = false;
-                MessageBox.Show(this, "The Settings are applied.","Success");
-                this.Close();
+                MessageBox.Show(this, "The Settings are applied.", "Success");
             }
             else
             {
-                MessageBox.Show(this, "Login Failed","Failed");
-                this.Close();
+                MessageBox.Show(this, "Login Failed", "Failed");
             }
         }
 
@@ -238,7 +261,7 @@ namespace BarcodePrinter
                         this.radioButtonCode128.Checked ? Properties.Resources.EAN13 :
                         Properties.Resources.AutoEAN13Code128;
             if (
-                //this.comboBoxConnections.Text == this.setting.Connection &&
+               //this.comboBoxConnections.Text == this.setting.Connection &&
                this.checkBoxPrintOnCommit.Checked == this.setting.PrintOnCommit &&
                this.comboBoxPrinters.Text == this.setting.Printer &&
                this.textBoxFontSize.Text == this.setting.FontSize.ToString() &&
@@ -293,6 +316,165 @@ namespace BarcodePrinter
         private void radioButtonAuto_CheckedChanged(object sender, EventArgs e)
         {
             comboBoxConnections_TextChanged(sender, e);
+        }
+
+        private void buttonSaveApplicationSettings_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Properties.Settings.Default.Application =
+                    this.radioButtonLSOne.Checked ? "LSONE" : this.radioButtonNAV.Checked ? "NAV" :
+                    Properties.Resources.DefaultApplication;
+                Properties.Settings.Default.Company = this.textBoxCompany.Text.Trim();
+                Properties.Settings.Default.Store = this.comboBoxStore.SelectedValue.ToString().Trim();
+            }
+            catch (Exception)
+            {
+
+            }
+            Properties.Settings.Default.Save();
+            ((Button)sender).Enabled = false;
+
+        }
+
+        private void textBoxCompany_TextChanged(object sender, EventArgs e)
+        {
+            //this.comboBoxStore.Items.Clear();
+            try
+            {
+                this.comboBoxStore.Cursor = Cursors.WaitCursor;
+                if (loadStoreThread != null && loadStoreThread.IsAlive)
+                {
+                    loadStoreThread.Abort();
+                    loadStoreThread = null;
+                }
+                loadStoreThread = new Thread(() =>
+                {
+                    try
+                    {
+                        var stores = MyOledbHandler.GetStores(this.textBoxCompany.Text.Trim());
+                        setStoresSafe(stores);
+                    }
+                    catch (Exception) { setStoresSafe(null); }
+                });
+                if(!loadStoreThread.IsAlive)
+                loadStoreThread.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this,
+                    ex.InnerException == null ? "" : ex.InnerException.Message,
+                    ex.Message);
+                this.buttonSaveApplicationSettings.Enabled = false;
+            }
+            finally
+            {
+                this.comboBoxStore.Cursor = Cursors.Default;
+            }
+        }
+
+        private delegate void SafeCallDelegate(Dictionary<string, string> stores);
+        private void setStoresSafe(Dictionary<string, string> stores)
+        {
+            try
+            {
+                if (this.comboBoxStore.InvokeRequired)
+                {
+                    var d = new SafeCallDelegate(setStoresSafe);
+                    Invoke(d, new object[] { stores });
+                }
+                else
+                {
+                    this.comboBoxStore.DataSource = new BindingSource(stores, null);
+                    this.comboBoxStore.DisplayMember = "Key";
+                    this.comboBoxStore.ValueMember = "Value";
+
+                    try
+                    {
+                        this.comboBoxStore.SelectedValue = Properties.Settings.Default.Store;
+                    }
+                    catch (Exception) { }
+                    enableSaveSettings();
+                }
+            }
+            catch (Exception) { }
+        }
+
+        private void textBoxCompany_Leave(object sender, EventArgs e)
+        {
+
+            //this.comboBoxStore.Items.Clear();
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                var stores = MyOledbHandler.GetStores(this.textBoxCompany.Text.Trim());
+                setStoresSafe(stores);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this,
+                    ex.InnerException == null ? "" : ex.InnerException.Message,
+                    ex.Message);
+                this.buttonSaveApplicationSettings.Enabled = false;
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void comboBoxStore_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var currency = MyOledbHandler.GetStoreCurrency(this.comboBoxStore.SelectedValue.ToString(), this.textBoxCompany.Text.Trim());
+            var disp = BarcodeLabel.GetFormatedCurrency(currency, decimal.Zero);
+            this.labelCurrency.Text = string.IsNullOrEmpty(currency) ? disp + "-N-" : disp+currency;
+            enableSaveSettings();
+        }
+
+        private void enableSaveSettings()
+        {
+            if (
+                this.textBoxCompany.Text.Trim() != Properties.Settings.Default.Company ||
+                this.comboBoxStore.SelectedValue.ToString() != Properties.Settings.Default.Store
+                )
+                this.buttonSaveApplicationSettings.Enabled = true;
+        }
+
+        private void btnPrintTest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var printer = new ZebraPrinter(this.comboBoxPrinters.SelectedItem.ToString());
+                BarcodeLabel label = null;
+                label = new BarcodeLabel()
+                {
+                    Barcode = tbSample.Text,
+                    Description = tbDesc.Text,
+                    Currency = "XXXX",
+                    PriceWithTax = 88888888.555M
+                };
+                printer.Print(label.ELN);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void setDefault_Click(object sender, EventArgs e)
+        {
+                this.textBoxEAN13ELN.Text = textBoxEAN13Sample.Text;
+            this.textBoxCode128ELN.Text = textBoxCode128Sample.Text;
+        }
+
+        private void clearLog_Click(object sender, EventArgs e)
+        {
+            const string file = "log.txt";
+            try
+            {
+                File.WriteAllText(Path.GetFullPath(file), String.Empty);
+            }
+            catch (Exception) { }
         }
     }
 }

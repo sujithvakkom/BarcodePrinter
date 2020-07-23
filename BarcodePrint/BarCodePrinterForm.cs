@@ -12,6 +12,9 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Threading;
 using System.Data.SqlClient;
+using System.Deployment.Application;
+using System.Diagnostics;
+
 namespace BarCodePrinter
 {
     public partial class barcodePrinterForm : Form
@@ -103,6 +106,9 @@ namespace BarCodePrinter
             #endregion
             BarcodePrinter.Properties.Settings.Default.PrinterChanged +=
                 new BarcodePrinter.Properties.Settings.PrinterChangedHandeler(Default_PrinterChanged);
+
+            FileVersionInfo.GetVersionInfo(Path.Combine(Environment.CurrentDirectory, "BarcodePrinter.exe"));
+            this.Text+=(" "+ FileVersionInfo.GetVersionInfo(Path.Combine(Environment.CurrentDirectory, "BarcodePrinter.exe")).ProductVersion);
         }
         private string GetConnectionDetail()
         {
@@ -194,7 +200,8 @@ namespace BarCodePrinter
             {
                 Console.WriteLine(ex.Message);
             }
-            selectedDataGridView.Rows[e.RowIndex].Selected = true;
+            if (e.RowIndex > 0 && e.RowIndex < selectedDataGridView.RowCount)
+                selectedDataGridView.Rows[e.RowIndex].Selected = true;
         }
         void selectedDataGridView_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
@@ -324,7 +331,7 @@ namespace BarCodePrinter
                         if (this.barCodeTextBox.Text.Trim().Length == 13)
                         {
                             //DialogResult result;
-                            result = MessageBox.Show("Item does not exists./nDo you want to print the Barcode?",
+                            result = MessageBox.Show("Item does not exists.\nDo you want to print the Barcode?",
                                 "Item not in found.",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Exclamation);
@@ -399,7 +406,7 @@ namespace BarCodePrinter
             {
                 try
                 {
-                    this.customeDiscriprionTextBox.Text = item.ItemDiscription.Remove(20);
+                    this.customeDiscriprionTextBox.Text = item.ItemDiscription;
                 }
                 catch (Exception)
                 {
@@ -463,6 +470,7 @@ namespace BarCodePrinter
             this.isItemcodePrint.Name = "ptint_item";
             this.isItemcodePrint.Width = 30;
             this.isItemcodePrint.ReadOnly = false;
+            this.isItemcodePrint.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // isItemcodePrint
             // 
@@ -471,12 +479,14 @@ namespace BarCodePrinter
             this.isDiscriprionPrint.Name = "print_name";
             this.isDiscriprionPrint.Width = 30;
             this.isDiscriprionPrint.ReadOnly = false;
+            this.isDiscriprionPrint.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // itemcodeDataGridViewTextBoxColumn
             // 
             this.itemcodeDataGridViewTextBoxColumn.DataPropertyName = "item_code";
             this.itemcodeDataGridViewTextBoxColumn.HeaderText = "Item Code";
             this.itemcodeDataGridViewTextBoxColumn.Name = "itemcodeDataGridViewTextBoxColumn";
+            this.itemcodeDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // itemnameDataGridViewTextBoxColumn
             // 
@@ -484,12 +494,14 @@ namespace BarCodePrinter
             this.itemnameDataGridViewTextBoxColumn.HeaderText = "Item Name";
             this.itemnameDataGridViewTextBoxColumn.Name = "itemnameDataGridViewTextBoxColumn";
             this.itemnameDataGridViewTextBoxColumn.Width = 160;
+            this.itemnameDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // crossreferenceDataGridViewTextBoxColumn
             // 
             this.crossreferenceDataGridViewTextBoxColumn.DataPropertyName = "barcode";
             this.crossreferenceDataGridViewTextBoxColumn.HeaderText = "Barcode";
             this.crossreferenceDataGridViewTextBoxColumn.Name = "crossreferenceDataGridViewTextBoxColumn";
+            this.crossreferenceDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // noofprintDataGridViewTextBoxColumn
             // 
@@ -497,6 +509,7 @@ namespace BarCodePrinter
             this.noofprintDataGridViewTextBoxColumn.HeaderText = "No. Print";
             this.noofprintDataGridViewTextBoxColumn.Width = 60;
             this.noofprintDataGridViewTextBoxColumn.Name = "noofprintDataGridViewTextBoxColumn";
+            this.noofprintDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // barcodeDataGridViewTextBoxColumn
             // 
@@ -504,6 +517,7 @@ namespace BarCodePrinter
             this.barcodePictureDataGridViewTextBoxColumn.HeaderText = "Barcode";
             this.barcodePictureDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
             this.barcodePictureDataGridViewTextBoxColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            this.barcodePictureDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
         private void printButton_Click(object sender, EventArgs e)
         {
@@ -690,6 +704,15 @@ namespace BarCodePrinter
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void buttonItemLookup_Click(object sender, EventArgs e)
+        {
+            FormItemLookup lookup = new FormItemLookup();
+            if (lookup.ShowDialog(this) == DialogResult.OK) {
+                this.barCodeTextBox.Text = lookup.Result;
+                this.barCodeTextBox.Focus();
+            }
         }
     }
 }

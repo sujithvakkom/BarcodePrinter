@@ -123,12 +123,59 @@
   <data name="Code128" xml:space="preserve">
     <value>Code 128</value>
   </data>
+  <data name="DefaultApplication" xml:space="preserve">
+    <value>LSONE</value>
+  </data>
   <data name="EAN13" xml:space="preserve">
     <value>EAN 13</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="HelpBarcodePrint" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HelpBarcodePrint.chm;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LSOneItemQuery" xml:space="preserve">
+    <value>SELECT TOP (10) ITM.ITEMID AS ITEM_CODE,
+                ITM.ITEMNAME AS ITEM_NAME,
+                BAR.ITEMBARCODE AS CROSS_REFERENCE,
+			 'AED' as CURRENCY,
+                ISNULL(DISC.AMOUNTINCLTAX, ITM.SALESPRICEINCLTAX) AS SALESPRICEINCLTAX
+FROM RETAILITEM ITM
+     INNER JOIN INVENTITEMBARCODE BAR ON ITM.ITEMID = BAR.ITEMID
+     LEFT JOIN PRICEDISCTABLE DISC ON ITM.ITEMID = DISC.ITEMRELATION
+                                      AND bar.UNITID = DISC.UNITID
+WHERE isnull(DISC.ACCOUNTCODE, 2) = 2
+      AND isnull(DISC.RELATION, 4) = 4
+      AND ITM.DELETED = 0
+      AND (UPPER(REPLACE(ITM.ITEMID,'-','')) LIKE UPPER(@ITEMID)
+           OR UPPER(BAR.ITEMBARCODE) LIKE UPPER(@ITEMBARCODE))
+ORDER BY ITEM_CODE</value>
+  </data>
+  <data name="NAVItemQuery" xml:space="preserve">
+    <value>SELECT TOP (10) ITM.[No_] AS                                                                                      ITEM_CODE ,
+                ITM.[Description] AS                                                                              ITEM_NAME ,
+                BAR.[Barcode No_] AS                                                                              CROSS_REFERENCE ,
+                sto.[Currency Code] AS                                                                                          CURRENCY ,
+                ISNULL(prc_str.[Unit Price Including VAT] , ISNULL(prc_def.[Unit Price Including VAT] , 0.00)) AS SALESPRICEINCLTAX
+FROM [dbo].[{0}$Item] AS ITM INNER JOIN [dbo].[{0}$Barcodes] AS BAR ON ITM.No_ = BAR.[Item No_]
+                             LEFT JOIN ( SELECT a.[Item No_] ,
+                                                a.[Unit Price Including VAT]
+                                         FROM [dbo].[{0}$Sales Price] AS a INNER JOIN [dbo].[{0}$Retail Setup] AS b ON a.[Sales Code] = [Default Price Group]
+                                       ) AS prc_def ON ITM.[No_] = prc_def.[Item No_]
+                             LEFT JOIN ( SELECT a.[Item No_] ,
+                                                a.[Unit Price Including VAT] ,
+                                                ROW_NUMBER() OVER(PARTITION BY a.[Item No_] ORDER BY b.[Priority] DESC) AS Priority
+                                         FROM [dbo].[{0}$Sales Price] AS a INNER JOIN [dbo].[{0}$Store Price Group] AS b ON a.[Sales Code] = b.[Price Group Code]
+                                                                           INNER JOIN [dbo].[{0}$Retail Setup] AS c ON b.Store = c.[Local Store No_]
+                                       ) AS prc_str ON ITM.[No_] = prc_str.[Item No_]
+                                                       AND
+                                                       Priority = 1
+													   left join [dbo].[{0}$Store] sto on sto.No_ = @Store
+WHERE ITM.[No_] LIKE @ITEMID
+      OR
+      UPPER(ITM.[Description]) LIKE UPPER(@Description)
+      OR
+      UPPER(ITM.[Vendor Item No_]) LIKE UPPER(@ITEMID)
+ORDER BY ITEM_CODE</value>
   </data>
   <data name="SampleCode128ELN" xml:space="preserve">
     <value>
@@ -138,12 +185,11 @@ q344
 Q192,24
 D15
 S1
-A50,20,0,2,1,1,N,"{0}"
-B50,50,0,1,2,2,70,B,"{1}"
-A100,150,0,4,1,1,N,"{2} "
-A160,150,0,4,1,1,N,"{3}"
-A140,175,0,1,1,1,N,
-P{4}
+A40,0,0,3,1,1,N,"$itemid$"
+A40,30,0,2,1,1,N,"$description1$"
+A40,60,0,2,1,1,N,"$description2$"
+B50,90,0,1,2,2,50,B,"$barcode$"
+P$count$,1
 </value>
   </data>
   <data name="SampleEAN13ELN" xml:space="preserve">
@@ -154,12 +200,11 @@ q344
 Q192,24
 D15
 S1
-A50,20,0,2,1,1,N,"{0}"
-B50,50,0,E30,2,5,80,B,"{1}"
-A100,150,0,4,1,1,N,"{2} "
-A160,150,0,4,1,1,N,"{3}"
-A140,175,0,1,1,1,N,
-P{4}
+A40,5,0,3,1,1,N,"$itemid$"
+A40,35,0,2,1,1,N,"$description1$"
+A40,65,0,2,1,1,N,"$description2$"
+B50,95,0,E30,2,5,60,B,"$barcode$"
+P$count$,1
 </value>
   </data>
   <data name="settings_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">

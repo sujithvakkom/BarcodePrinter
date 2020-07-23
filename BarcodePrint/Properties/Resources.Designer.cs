@@ -79,6 +79,15 @@ namespace BarcodePrinter.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to LSONE.
+        /// </summary>
+        internal static string DefaultApplication {
+            get {
+                return ResourceManager.GetString("DefaultApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to EAN 13.
         /// </summary>
         internal static string EAN13 {
@@ -98,6 +107,36 @@ namespace BarcodePrinter.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT TOP (10) ITM.ITEMID AS ITEM_CODE,
+        ///                ITM.ITEMNAME AS ITEM_NAME,
+        ///                BAR.ITEMBARCODE AS CROSS_REFERENCE,
+        ///			 &apos;AED&apos; as CURRENCY,
+        ///                ISNULL(DISC.AMOUNTINCLTAX, ITM.SALESPRICEINCLTAX) AS SALESPRICEINCLTAX
+        ///FROM RETAILITEM ITM
+        ///     INNER JOIN INVENTITEMBARCODE BAR ON ITM.ITEMID = BAR.ITEMID
+        ///     LEFT JOIN PRICEDISCTABLE DISC ON ITM.ITEMID = DISC.ITEMRELATION
+        ///                                      AND bar.UNITID = DISC.UNITID
+        ///WHERE isnull(DISC.ACCOUNTCODE, 2) =  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string LSOneItemQuery {
+            get {
+                return ResourceManager.GetString("LSOneItemQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT TOP (10) ITM.[No_] AS                                                                                      ITEM_CODE ,
+        ///                ITM.[Description] AS                                                                              ITEM_NAME ,
+        ///                BAR.[Barcode No_] AS                                                                              CROSS_REFERENCE ,
+        ///                sto.[Currency Code] AS                                                                                        [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string NAVItemQuery {
+            get {
+                return ResourceManager.GetString("NAVItemQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 
         ///N
         ///OD
@@ -105,12 +144,11 @@ namespace BarcodePrinter.Properties {
         ///Q192,24
         ///D15
         ///S1
-        ///A50,20,0,2,1,1,N,&quot;{0}&quot;
-        ///B50,50,0,1,2,2,70,B,&quot;{1}&quot;
-        ///A100,150,0,4,1,1,N,&quot;{2} &quot;
-        ///A160,150,0,4,1,1,N,&quot;{3}&quot;
-        ///A140,175,0,1,1,1,N,
-        ///P{4}
+        ///A40,0,0,3,1,1,N,&quot;$itemid$&quot;
+        ///A40,30,0,2,1,1,N,&quot;$description1$&quot;
+        ///A40,60,0,2,1,1,N,&quot;$description2$&quot;
+        ///B50,90,0,1,2,2,50,B,&quot;$barcode$&quot;
+        ///P$count$,1
         ///.
         /// </summary>
         internal static string SampleCode128ELN {
@@ -127,12 +165,11 @@ namespace BarcodePrinter.Properties {
         ///Q192,24
         ///D15
         ///S1
-        ///A50,20,0,2,1,1,N,&quot;{0}&quot;
-        ///B50,50,0,E30,2,5,80,B,&quot;{1}&quot;
-        ///A100,150,0,4,1,1,N,&quot;{2} &quot;
-        ///A160,150,0,4,1,1,N,&quot;{3}&quot;
-        ///A140,175,0,1,1,1,N,
-        ///P{4}
+        ///A40,5,0,3,1,1,N,&quot;$itemid$&quot;
+        ///A40,35,0,2,1,1,N,&quot;$description1$&quot;
+        ///A40,65,0,2,1,1,N,&quot;$description2$&quot;
+        ///B50,95,0,E30,2,5,60,B,&quot;$barcode$&quot;
+        ///P$count$,1
         ///.
         /// </summary>
         internal static string SampleEAN13ELN {
