@@ -19,7 +19,7 @@ namespace BarcodePrinter.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -107,16 +107,17 @@ namespace BarcodePrinter.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT TOP (10) ITM.ITEMID AS ITEM_CODE,
-        ///                ITM.ITEMNAME AS ITEM_NAME,
-        ///                BAR.ITEMBARCODE AS CROSS_REFERENCE,
-        ///			 &apos;AED&apos; as CURRENCY,
-        ///                ISNULL(DISC.AMOUNTINCLTAX, ITM.SALESPRICEINCLTAX) AS SALESPRICEINCLTAX
+        ///   Looks up a localized string similar to SELECT TOP (10) ITM.ITEMID AS ITEM_CODE, 
+        ///                ITM.ITEMNAME AS ITEM_NAME, 
+        ///                BAR.ITEMBARCODE AS CROSS_REFERENCE, 
+        ///                &apos;AED&apos; AS CURRENCY, 
+        ///                 ITM.SALESPRICEINCLTAX SALESPRICEINCLTAX
         ///FROM RETAILITEM ITM
         ///     INNER JOIN INVENTITEMBARCODE BAR ON ITM.ITEMID = BAR.ITEMID
-        ///     LEFT JOIN PRICEDISCTABLE DISC ON ITM.ITEMID = DISC.ITEMRELATION
-        ///                                      AND bar.UNITID = DISC.UNITID
-        ///WHERE isnull(DISC.ACCOUNTCODE, 2) =  [rest of string was truncated]&quot;;.
+        ///WHERE ITM.DELETED = 0
+        ///      AND (UPPER(REPLACE(ITM.ITEMID, &apos;-&apos;, &apos;&apos;)) LIKE UPPER(@ITEMID)
+        ///           OR UPPER(BAR.ITEMBARCODE) LIKE UPPER(@ITEMBARCODE))
+        ///ORDER BY ITEM_CODE.
         /// </summary>
         internal static string LSOneItemQuery {
             get {

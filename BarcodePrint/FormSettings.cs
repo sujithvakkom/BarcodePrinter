@@ -37,6 +37,8 @@ namespace BarcodePrinter
             private string _BarcodeMode;
             private string _Application;
             private string _Company;
+            private string _FSSAI;
+            private bool _FNC;
 
             public String Connection { get { return _Connection; } set { _Connection = value; } }
             public String DataSource { get { return _DataSource; } set { _DataSource = value; } }
@@ -50,6 +52,10 @@ namespace BarcodePrinter
             public String BarcodeMode { get { return _BarcodeMode; } set { _BarcodeMode = value; } }
             public int FontSize { get { return _FontSize; } set { _FontSize = value; } }
             public bool PrintOnCommit { get { return _PrintOnCommit; } set { _PrintOnCommit = value; } }
+
+            public string FSSAI { get { return _FSSAI; } set { _FSSAI = value; } }
+
+            public bool FNC { get { return _FNC; } set { _FNC = value; } }
             public Settings(Boolean x)
             {
                 _Connection = Properties.Settings.Default.ConnectionName;
@@ -66,6 +72,8 @@ namespace BarcodePrinter
                 _BarcodeMode = Properties.Settings.Default.BarcodeMode;
                 _Application = Properties.Settings.Default.Application;
                 _Company = Properties.Settings.Default.Company;
+                _FSSAI = Properties.Settings.Default.FSSAI;
+                _FNC = Properties.Settings.Default.FNC;
             }
         }
         public FormSettings()
@@ -108,6 +116,8 @@ namespace BarcodePrinter
             this.radioButtonLSOne.Checked = (Properties.Settings.Default.Application == Properties.Resources.DefaultApplication);
             this.radioButtonNAV.Checked = (Properties.Settings.Default.Application != Properties.Resources.DefaultApplication);
             this.textBoxCompany.Text = Properties.Settings.Default.Company;
+            this.tbFSSAI.Text = Properties.Settings.Default.FSSAI;
+            this.chkFNC.Checked = Properties.Settings.Default.FNC;
             foreach (var x in this.groupBoxBarcodeMode.Controls)
             {
                 if (x.GetType() == typeof(RadioButton))
@@ -200,6 +210,22 @@ namespace BarcodePrinter
                 }
                 try
                 {
+                    Properties.Settings.Default.FSSAI = this.tbFSSAI.Text.Trim();
+                }
+                catch (Exception)
+                {
+
+                }
+                try
+                {
+                    Properties.Settings.Default.FNC = this.chkFNC.Checked;
+                }
+                catch (Exception)
+                {
+
+                }
+                try
+                {
 
                     //this.radioButtonAuto.Text = Properties.Resources.AutoEAN13Code128;
                     //this.radioButtonEAN13.Text = Properties.Resources.EAN13;
@@ -271,7 +297,9 @@ namespace BarcodePrinter
                this.textBoxPassword.Text == this.setting.Password.ToString() &&
                this.textBoxEAN13ELN.Text == this.setting.EAN13ELN.ToString() &&
                this.textBoxCode128ELN.Text == this.setting.Code128ELN.ToString() &&
-               bModeSettingCur == this.setting.BarcodeMode.ToString())
+               bModeSettingCur == this.setting.BarcodeMode.ToString() &&
+               this.tbFSSAI.Text == this.setting.FSSAI.ToString() &&
+               this.chkFNC.Checked == this.setting.FNC)
             {
                 this.buttonApply.Enabled = false;
             }

@@ -38,7 +38,10 @@ namespace BarCodePrinter
                     Description = item[3].ToString(),
                     Currency = item[8].ToString(),
                     PriceWithTax = Decimal.Parse(item[9].ToString()),
-                    Count = Int32.Parse(item[5].ToString())
+                    Count = Int32.Parse(item[5].ToString()),
+                    PackingDate = item[10].ToString(),
+                    ExpairyDate = item[11].ToString(),
+                    NeedMasing = (bool)item[12]
                 };
                 if (label != null)
                 {

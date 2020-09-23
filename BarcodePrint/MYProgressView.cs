@@ -119,7 +119,8 @@ namespace BarcodePrinter
                 {
                     try
                     {
-                        timer.Stop();
+                        if (timer != null)
+                            timer.Stop();
                     }
                     catch (Exception ex)
                     { }

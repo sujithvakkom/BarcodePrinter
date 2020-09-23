@@ -157,6 +157,9 @@ namespace BarCodePrinter
 
             }
         }
+
+        public string BarcodeMode { get; internal set; }
+
         public override string ToString()
         {
             const string format= @"{0} {1} {2}";

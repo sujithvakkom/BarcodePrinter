@@ -190,7 +190,9 @@ namespace BarcodePrinter
             get { return _Barcode; }
             set
             {
-                _Barcode = value.PadLeft(13,'0');
+                if (NeedMasing)
+                    _Barcode = value.PadLeft(13, '0');
+                else _Barcode = value;
                 if (Properties.Settings.Default.BarcodeMode == Properties.Resources.AutoEAN13Code128)
                 { ELNFormat = IsValidGtin(_Barcode) ? ELNFormatEAN13 : ELNFormatCode128; }
                 else
@@ -272,9 +274,17 @@ namespace BarcodePrinter
                 return GetFormatedCurrency(this.Currency, PriceWithTax);
             }
         }
+        private string Liscence
+        {
+            get
+            {
+                return Properties.Settings.Default.FSSAI;
+            }
+        }
         public string NumLabels { get; set; }
         public Dictionary<string, string> Formate
         {
+
             get
             {
                 return new Dictionary<string, string>(
@@ -285,6 +295,9 @@ namespace BarcodePrinter
                     {"barcode", Barcode},
                     {"currency", Currency},
                     {"price", PriceWithTaxText},
+                    {"liscence", Liscence},
+                    {"packdate", PackingDate},
+                    {"expirydate", ExpairyDate},
                     {"count", Count.ToString()}
                 };
             }
@@ -298,6 +311,9 @@ namespace BarcodePrinter
         }
 
         public int Count { get; internal set; }
+        public string PackingDate { get; internal set; }
+        public string ExpairyDate { get; internal set; }
+        public bool NeedMasing { get; internal set; }
 
         public static string GetFormatedCurrency(string currancy, decimal value)
         {

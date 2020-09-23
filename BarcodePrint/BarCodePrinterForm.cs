@@ -14,6 +14,8 @@ using System.Threading;
 using System.Data.SqlClient;
 using System.Deployment.Application;
 using System.Diagnostics;
+using System.Security.Cryptography;
+using BarcodePrinter.Properties;
 
 namespace BarCodePrinter
 {
@@ -54,6 +56,9 @@ namespace BarCodePrinter
             this.itemListForPrint.Columns.Add("header", typeof(Barcode));
             this.itemListForPrint.Columns.Add("currency", typeof(string));
             this.itemListForPrint.Columns.Add("price", typeof(decimal));
+            this.itemListForPrint.Columns.Add("packingdate", typeof(string));
+            this.itemListForPrint.Columns.Add("expairydate", typeof(string));
+            this.itemListForPrint.Columns.Add("needMasking", typeof(bool));
             this.itemListForPrint.ColumnChanged += new DataColumnChangeEventHandler(itemListForPrint_ColumnChanged);
             this.itemListForPrint.RowChanged += new DataRowChangeEventHandler(itemListForPrint_RowChanged);
             this.itemListForPrint.RowDeleted += new DataRowChangeEventHandler(itemListForPrint_RowDeleted);
@@ -402,6 +407,10 @@ namespace BarCodePrinter
         }
         private void addToPrintList_Click(object sender, EventArgs e)
         {
+            var datePicker = new DatePicker();
+            if (BarcodePrinter.Properties.Settings.Default.FNC)
+                datePicker.ShowDialog(this);
+
             if (this.customeDiscriprionTextBox.Text.Trim() == "")
             {
                 try
@@ -416,12 +425,23 @@ namespace BarCodePrinter
             item.ItemDiscription = this.customeDiscriprionTextBox.Text.Trim();
             if (this.modeOfPrintingNow == ModeOfPrinting.CustomeBarcode)
             {
+
                 Description description = new Description(item.Barcode, item.ItemDiscription, item.Barcode);
                 try
                 {
                     description.insert();
                 }
                 catch (Exception) { }
+            }
+            bool needMasking = true;
+            if (this.modeOfPrintingNow == ModeOfPrinting.CustomeBarcode)
+            {
+                //Check need zero
+                var result = MessageBox.Show(this, "Need masking in the barcode.", "ZERO Mask", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    needMasking = false;
+                }
             }
             x = new Barcode(item.Barcode, item.ItemDiscription, item.ItemCode);
             x.NumberOfPrint = item.numberOfPrint;
@@ -430,7 +450,11 @@ namespace BarCodePrinter
                 item.Barcode,
                 item.numberOfPrint,
                 (Image)x,
-                x,item.Currency,item.Price);
+                x,item.Currency,
+                item.Price,
+                datePicker.SelectedPackingDate,
+                datePicker.SelectedExperyDateDate,
+                needMasking);
             this.selectedDataGridView.Refresh();
             this.customeDiscriprionTextBox.Text = "";
             item.clear();

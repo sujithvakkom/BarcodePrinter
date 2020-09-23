@@ -134,19 +134,15 @@
     <value>..\Resources\HelpBarcodePrint.chm;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="LSOneItemQuery" xml:space="preserve">
-    <value>SELECT TOP (10) ITM.ITEMID AS ITEM_CODE,
-                ITM.ITEMNAME AS ITEM_NAME,
-                BAR.ITEMBARCODE AS CROSS_REFERENCE,
-			 'AED' as CURRENCY,
-                ISNULL(DISC.AMOUNTINCLTAX, ITM.SALESPRICEINCLTAX) AS SALESPRICEINCLTAX
+    <value>SELECT TOP (10) ITM.ITEMID AS ITEM_CODE, 
+                ITM.ITEMNAME AS ITEM_NAME, 
+                BAR.ITEMBARCODE AS CROSS_REFERENCE, 
+                'AED' AS CURRENCY, 
+                 ITM.SALESPRICEINCLTAX SALESPRICEINCLTAX
 FROM RETAILITEM ITM
      INNER JOIN INVENTITEMBARCODE BAR ON ITM.ITEMID = BAR.ITEMID
-     LEFT JOIN PRICEDISCTABLE DISC ON ITM.ITEMID = DISC.ITEMRELATION
-                                      AND bar.UNITID = DISC.UNITID
-WHERE isnull(DISC.ACCOUNTCODE, 2) = 2
-      AND isnull(DISC.RELATION, 4) = 4
-      AND ITM.DELETED = 0
-      AND (UPPER(REPLACE(ITM.ITEMID,'-','')) LIKE UPPER(@ITEMID)
+WHERE ITM.DELETED = 0
+      AND (UPPER(REPLACE(ITM.ITEMID, '-', '')) LIKE UPPER(@ITEMID)
            OR UPPER(BAR.ITEMBARCODE) LIKE UPPER(@ITEMBARCODE))
 ORDER BY ITEM_CODE</value>
   </data>
@@ -155,7 +151,7 @@ ORDER BY ITEM_CODE</value>
                 ITM.[Description] AS                                                                              ITEM_NAME ,
                 BAR.[Barcode No_] AS                                                                              CROSS_REFERENCE ,
                 sto.[Currency Code] AS                                                                                          CURRENCY ,
-                ISNULL(prc_str.[Unit Price Including VAT] , ISNULL(prc_def.[Unit Price Including VAT] , 0.00)) AS SALESPRICEINCLTAX
+                ISNULL(ITM.[MRP Price] , 0.00) AS SALESPRICEINCLTAX
 FROM [dbo].[{0}$Item] AS ITM INNER JOIN [dbo].[{0}$Barcodes] AS BAR ON ITM.No_ = BAR.[Item No_]
                              LEFT JOIN ( SELECT a.[Item No_] ,
                                                 a.[Unit Price Including VAT]
